@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Repro Monogram</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="monogram-style.css">
+  <link rel="stylesheet" href="monogram-media-queries.css">
+  <script src="monogram-app.js" defer></script>
+</head>
+
+<body>
+  <!-- nav section ---------------------------------------------------------->
+  <nav>
+    <div class="nav__logo">
+      <a href="#">
+        <svg viewBox="0 0 52 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="1" y="1" width="25" height="25" stroke="#EFC2B3" stroke-width="2" />
+          <rect x="26" y="14" width="25" height="25" stroke="#EFC2B3" stroke-width="2" />
+          <rect x="1" y="26" width="25" height="13" stroke="#EFC2B3" stroke-width="2" />
+          <rect x="26" y="1" width="25" height="13" stroke="#EFC2B3" stroke-width="2" />
+          <path
+            d="M38.3953 33.9091C42.4797 33.9091 45.7907 30.5716 45.7907 26.4545C45.7907 22.3375 42.4797 19 38.3953 19C34.311 19 31 22.3375 31 26.4545C31 30.5716 34.311 33.9091 38.3953 33.9091Z"
+            stroke="#EFC2B3" stroke-width="2" />
+          <path d="M20 6L20 21" stroke="#EFC2B3" stroke-width="2" />
+          <path d="M13.5 6L13.5 21" stroke="#EFC2B3" stroke-width="2" />
+          <path d="M7.00007 6L7.00007 21" stroke="#EFC2B3" stroke-width="2" />
+        </svg>
+        Monogram
+      </a>
+    </div>
+    <ul class="nav__links">
+      <li><a href="#">how it works</a></li>
+      <li class="nav__link--position-relative">
+        <button class="nav-toggle-submenu-button">
+          workflows
+          <svg viewBox="0 0 16 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8 8.5L16 0.5H8H0L8 8.5Z" fill="#EFC2B3" />
+          </svg>
+        </button>
+        <ul class="nav__links__submenu">
+          <li><a href="#">photo editing</a></li>
+          <li><a href="#">video & filmmaking</a></li>
+          <li><a href="#">music & audio</a></li>
+          <li><a href="#">virtual procuction</a></li>
+        </ul>
+      </li>
+      <li><a href="#">download</a></li>
+      <li><a href="#">support</a></li>
+      <li><a class="nav__link--bold" href="#">shop</a></li>
+    </ul>
+
+    <div class="nav__burg-bag-wrapper">
+      <button class="nav__burger-icon"><img src="./monogram-svgs/Hamburger.svg" alt="open/close menu links"></button>
+      <button class="nav__bag-icon"><img src="./monogram-svgs/shopping-bag.svg" alt="view shopping cart" title="View Shopping Cart"></button>
+    </div>
+  </nav>
+
+
+  <!-- shopping cart section ------------------------------------------------>
+
+  <section class="shopping-cart__section">
+    <div class="shopping-cart__modal"></div>
+    <section class="shopping-cart">
+      <div class="shopping-cart__header">
+        <button class="shopping-cart__close-button">
+          <img src="./monogram-svgs/left-chevron.svg" alt="click to close">
+          Continue Shopping
+        </button>
+      </div>
+
+      <div class="shopping-cart__main">
+        <h3>Nothing in your bag!</h3>
+        <img src="./monogram-svgs/better-editing-guaranteed-blue.svg" alt="Better Editing Guaranteed Logo">
+        <h4>Monogram Better Editing Guaranteed</h4>
+        <p>Try Monogram Creative Console in your own workflow for 30 days. If it does not improve your editing
+          experience, you can return it for a full refund.</p>
+      </div>
+
+      <div class="shopping-cart__footer">
+        <div class="shopping-cart__footer-details">
+          <h4>Subtotal</h4>
+          <p>(0 Items)</p>
+          <h4>$0.00</h4>
+        </div>
+        <button>Checkout</button>
+      </div>
+    </section>
+  </section>
+
+
+  <!-- hero section --------------------------------------------------------->
+  <section class="hero">
+    <div class="hero__outer-wrapper">
+      <!-- used for placement -->
+      <div class="hero__wrapper">
+        <h1>A console for every workflow</h1>
+        <p>Discover the perfect console for&nbsp;yours.</p>
+      </div>
+    </div>
+    <div class="hero__down-chevron"><img src="./monogram-svgs/down-chevron.svg" alt="scroll down" title="Scroll Down"></div>
+  </section>
+
+
+  <!-- three-products section------------------------------------------------>
+  <section class="three-products">
+    <div class="product">
+      <img src="./monogram-images/small1-boxed.webp" alt="Traveler Console">
+      <img class="product--hidden" src="./monogram-images/small1.webp" alt="Traveler Console unboxed">
+      <div class="product__details">
+        <h3>Traveler Console</h3>
+        <p>$399</p>
+        <button>Shop Now</button>
+      </div>
+      <p class="product__description">Ideal for music & audio. Adaptable to any workflow.</p>
+    </div>
+
+    <div class="product">
+      <img src="./monogram-images/small2-boxed.webp" alt="Studio Console">
+      <img class="product--hidden" src="./monogram-images/small2.webp" alt="Studio Console unboxed">
+      <div class="product__details">
+        <h3>Studio Console</h3>
+        <p>$499</p>
+        <button>Shop Now</button>
+      </div>
+      <p class="product__description">Ideal for photo & video. Adaptable to any workflow.</p>
+    </div>
+
+    <div class="product product__special--wide">
+      <img src="./monogram-images/small3-boxed.webp" alt="Master Console">
+      <img class="product--hidden" src="./monogram-images/small3.webp" alt="Master Console unboxed">
+      <div class="product__details">
+        <h3>Master Console</h3>
+        <p>$799</p>
+        <button>Shop Now</button>
+      </div>
+      <p class="product__description">Ideal for virtual producion & film. Adaptable to any workflow.</p>
+    </div>
+  </section>
+
+
+  <!-- create section ----------------------------------------------------->
+  <section class="create">
+    <div class="create__wrapper">
+      <h1>Create your own console</h1>
+      <p>Add-on to make it perfect.</p>
+    </div>
+  </section>
+
+
+  <!-- five-products section ---------------------------------------------->
+  <section class="five-products">
+    <div class="product">
+      <img src="./monogram-images/small4-boxed.webp" alt="Monogram Core">
+      <img class="product--hidden" src="./monogram-images/small4.webp" alt="Monogram Core unboxed">
+      <div class="product__details">
+        <h3>Monogram Core</h3>
+        <p>$149</p>
+        <button>Shop Now</button>
+      </div>
+    </div>
+
+    <div class="product">
+      <img src="./monogram-images/small5-boxed.webp" alt="Orbiter Module">
+      <img class="product--hidden" src="./monogram-images/small5.webp" alt="Orbiter Module unboxed">
+      <div class="product__details">
+        <h3>Orbiter Module</h3>
+        <p>$149</p>
+        <button>Shop Now</button>
+      </div>
+    </div>
+
+    <div class="product">
+      <img src="./monogram-images/small6-boxed.webp" alt="Dial Module">
+      <img class="product--hidden" src="./monogram-images/small6.webp" alt="Dial Module unboxed">
+      <div class="product__details">
+        <h3>Dial Module</h3>
+        <p>$99</p>
+        <button>Shop Now</button>
+      </div>
+    </div>
+
+    <div class="product">
+      <img src="./monogram-images/small7-boxed.webp" alt="Slider Module">
+      <img class="product--hidden" src="./monogram-images/small7.webp" alt="Slider Module unboxed">
+      <div class="product__details">
+        <h3>Slider Module</h3>
+        <p>$129</p>
+        <button>Shop Now</button>
+      </div>
+    </div>
+
+    <div class="product">
+      <img src="./monogram-images/small8-boxed.webp" alt="Essential Keys Module">
+      <img class="product--hidden" src="./monogram-images/small8.webp" alt="Essential Keys Module unboxed">
+      <div class="product__details">
+        <h3>Essential Keys Module</h3>
+        <p>$99</p>
+        <button>Shop Now</button>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- footer section ------------------------------------------------------->
+  <footer>
+    <div class="footer__subscribe-n-social">
+      <div class="footer__subscribe">
+        <h5>Subscribe to Monogram</h5>
+        <p>Master productivity with Creative Console and get all the latest Monogram news.</p>
+        <div class="footer__email-wrapper">
+          <input type="text" placeholder="Email Address">
+          <button class="footer__email__submit-button">Submit</button>
+        </div>
+      </div>
+
+      <ul class="footer__social-links">
+        <a href="#" title="Instagram"><img src="./monogram-svgs/instagram-round.svg" alt="link to instagram"></a>
+        <a href="#" title="Twitter"><img src="./monogram-svgs/twitter-round-black.svg" alt="link to twitter"></a>
+        <a href="#" title="Facebook"><img src="./monogram-svgs/facebook-round-closed-bottom.svg" alt="link to facebook"></a>
+        <a href="#" title="Youtube"><img src="./monogram-svgs/youtuble-round.svg" alt="link to youtube"></a>
+      </ul>
+    </div>
+
+    <div class="footer__address">
+      <h5>Monogram</h5>
+      <p>305 King St. W<br> Suite 502<br>Kitchener, ON<br>Canada</p>
+    </div>
+
+    <div class="footer__quick-links">
+      <h5>Quick Links</h5>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">How it Works</a></li>
+        <li><a href="#">Shop</a></li>
+        <li><a href="#">Download</a></li>
+      </ul>
+    </div>
+
+    <div class="footer__help">
+      <h5>Help</h5>
+      <ul>
+        <li><a href="#">FAQs</a></li>
+        <li><a href="#">Support Center</a></li>
+        <li><a href="#">Shipping and Sales</a></li>
+        <li><a href="#">Palette Support</a></li>
+      </ul>
+    </div>
+
+    <div class="footer__info">
+      <h5>Information</h5>
+      <ul>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Work with Us</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms of Use</a></li>
+        <li><a href="#">Terms of Sale</a></li>
+        <li><a href="#">Press Kit</a></li>
+      </ul>
+    </div>
+
+    <div class="footer__final">
+      <p>© Monogram 2021</p>
+      <p>Protected by reCAPTCHA - <a title="link to reCAPTCHA privacy policy" href="#">Privacy</a> - <a title="link to reCAPTCHA terms of service" href="#">Terms</a></p>
+    </div>
+  </footer>
+
+</body>
+
+</html>

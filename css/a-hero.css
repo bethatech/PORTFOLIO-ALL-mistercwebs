@@ -1,0 +1,547 @@
+
+/* CONTENTS
+  global styles 54
+  section indicators 98
+  modal, header & nav 119
+  nav buttons 159
+  nav menu & ul 214
+  hero section 279
+  hero button 301
+  hero Scene container & banner 361
+  floor 427
+  @media 672px 455
+  @media 1024px 519
+  @media 1600px 538
+*/
+
+/* NOTE: there are custom properties in :root of most .css files in PORTFOLIO-ALL */
+
+:root{
+  /* GLOBAL */
+  --sect-inline-marg: 10%; /* redef'd at @media 1024px */
+  --ff-main: 'Handlee', sans-serif;
+  --ff-secondary: 'Orbitron', sans-serif;
+  --section-separator-ht: 10vmax; /* used by all section separators */
+
+  --clr-yell: hsl(59 100% 83%);
+  --clr-gold: hsl(51 100% 50%); 
+  --clr-crim: hsl(348 83% 38%);
+  --clr-dk-brown: hsl(51 100% 8%); 
+  --clr-nav-ul-blue: hsl(253 100% 50%);
+   
+  --sect-indicator-h2-fz: max(2.3rem, calc(1.2rem + 2.8vw)); /* also used by contact__header h3 */
+  --hero-h1-fz: max(2.1rem, calc(1rem + 2.8vw)); 
+  
+  --op-modal: 0.4;
+  --op-floor: 0.6;
+  --op-lamp: 0.4;
+
+   /* everything below here is redef'd at various screen widths */
+  --nav-fz: 1.1rem; /* <-- also used by contact-footer <-- */
+  --nav-logo-ht: calc(var(--nav-fz) * 2.5);
+  --nav-pad-top: min(3em, 6.5vw);
+  --nav-li-marg-left: 6vw;
+  
+  --hero-cont-top-marg: 5.5vmax;
+  --hero-min-ht: 38rem; /* tiny screens */
+  --hero-btn-fz: 1rem;
+  --hero-banner-top: -18vh;
+  --hero-banner-fz: clamp(1.2rem, calc(2px + 3.75vw), 6rem);
+  --hero-banner-logo-size: max(33vw, 8rem);  
+}
+
+
+/* GLOBAL STYLES */
+
+html{
+  scroll-behavior: smooth;
+  scroll-padding: 0;
+}
+
+*,
+*::after,
+*::before{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: var(--ff-main);
+  color: var(--clr-gold);
+}
+
+body{
+  background-color: black;
+  background-image: url(../images/hero-images/starfield.webp);
+  background-size: 25vmax;  
+}
+
+a{
+  text-decoration: none;
+}
+
+button{
+  border: none;
+  font-family: var(--ff-secondary);
+  color: var(--clr-nav-ul-blue);
+}
+
+button *{
+  font-family: inherit;
+  color: inherit;
+}
+
+.hero__h1,
+.section__h2{
+  font-family: var(--ff-secondary);
+}
+
+
+/* STICKY SECTION INDICATORS */
+
+.section__h2{
+  position: sticky;
+  margin-left: var(--sect-inline-marg);
+  padding-top: 0.2em;
+  top: var(--nav-logo-ht);
+  font-size: var(--sect-indicator-h2-fz);
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: var(--clr-dk-brown);
+  pointer-events: none;
+  z-index: 5;
+  opacity: 0;
+  transition: opacity 300ms;
+}
+
+.section__h2--placeholder{
+  display: none;
+}
+
+
+/* MODAL, HEADER, NAV */
+
+
+.modal{
+  background-color: black;
+  position: fixed;
+  inset: 0;
+  min-height: 100vh;
+  opacity: 0;
+  z-index: 5;
+  pointer-events: none;
+  transition: opacity 300ms 300ms;
+}
+
+header{
+  background-color: hsl(0 0% 0% / 0.5);
+  position: sticky;
+  top: calc(var(--nav-pad-top) * -0.8);
+  inset-inline: 0;
+  box-shadow: 0 0.75em 0.75em hsl(0 0% 0% / 0.5);
+  overflow: hidden;
+  z-index: 10;
+}
+
+nav{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding:  var(--nav-pad-top) var(--sect-inline-marg) 0;
+}
+
+.nav__logo{
+  display: block;
+  height: var(--nav-logo-ht);
+  cursor: pointer;
+  opacity: 0;
+}
+
+
+/* NAV BUTTONS */
+
+
+.nav__menu__button{
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  height: min-content; /* because close btn */
+}
+
+.nav__menu__button__rocket{
+  width: 5.5em;
+}
+
+.nav__menu__button > span{
+  position: absolute;
+  top: 23%;
+  margin-left: 2em;
+  font-size: 0.8rem;
+  font-weight: 800;
+}
+
+.nav__menu__open-button{
+  transform: translateX(10em);
+}
+
+.nav__menu__close-button{
+  top: 0.25em;
+  left: 0.1em;
+  opacity: 0;
+  transform: rotateY(180deg);
+}
+
+.nav__menu__close-button > span{
+  margin-left: 1.75em;
+  transform: rotateY(180deg); /* rotate label back */
+}
+
+.nav__menu__button__flame{
+  position: absolute;
+  top: 13%;
+  height: 1.75em;
+  filter: blur(2px) drop-shadow(2px 2px hsl(0 100% 100% / 0.5)) drop-shadow(-2px -2px hsl(0 100% 100% / 0.5));
+  opacity: 0;
+}
+
+.nav__menu__open-button__flame{
+  left: 92%;
+}
+
+.nav__menu__close-button__flame{
+  right: -26%;
+}
+
+
+/* NAV MENU, UL */
+
+
+.nav__menu{ /* menu__closed button lives here */
+  position: absolute;
+  display: flex;
+  top: 0;
+  right: 0;
+  transform: translateX(120%);
+  transition: transform 600ms ease-out;
+  z-index: 100;
+}
+
+.nav__ul{
+  background-image: url(../images/hero-images/Starfield.webp);
+  background-size: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5em 2.5em 1.5em 8em;
+  border-bottom-left-radius: 500px;
+  filter: invert(100%);
+}
+
+.nav__ul::before{
+  content: '';
+  background-color: var(--clr-nav-ul-blue);
+  position: absolute;
+  inset: 0;
+  border-bottom-left-radius: 500px;
+  filter: invert(100%); /* the ol' double invert */
+  pointer-events: none;
+  opacity: 0.25;
+}
+
+.nav__li{
+  margin-bottom: 1.5em;
+  list-style-type: none;
+  transition: all 200ms;
+}
+
+.nav__li a{
+  font-size: var(--nav-fz);
+}
+
+.nav__li-1{
+  transition: transform 600ms ease-out 475ms;
+}
+
+.nav__li-2{
+  transition: transform 475ms ease-out 450ms;
+}
+
+.nav__li-3{
+  transition: transform 300ms ease-out 425ms;
+}
+
+.nav__li-4{
+  padding:  0.15em 0.75em; /* for border*/
+  border: solid 0.15em hsl(51 100% 50% / 0.6);
+  border-radius: 500px;
+  transform: translate(-0.5em -0.4em);
+  transition: border-color 250ms;
+}
+
+
+/* HERO */
+
+
+.hero{
+  position: relative;
+  height: calc(100vh - (var(--nav-logo-ht) + var(--nav-pad-top) + var(--hero-cont-top-marg)));
+  min-height: var(--hero-min-ht); /* for tiny screens */
+}
+
+.hero__content{
+  position: relative; /* to enable z-index */
+  margin: var(--hero-cont-top-marg) var(--sect-inline-marg) 0;
+  z-index: 2;
+}
+
+.hero h1{
+  margin-bottom: 0.7em;
+  font-size: var(--hero-h1-fz);
+  letter-spacing: 0.02em;
+  opacity: 0
+}
+
+/* HERO BUTTON */
+
+
+.hero__button{
+  background-color: transparent;
+  position: relative;
+  display: flex;
+  align-items: center;
+  font-size: var(--hero-btn-fz);
+  font-weight: 500;
+  color: var(--clr-yell);
+  z-index: 2;
+  transform: translateX(-30vmax);
+}
+
+.hero__button__rocket{
+  width: 10em;
+}
+
+.hero__button > span{
+  position: absolute;
+  display: flex;
+  align-items: center;
+  margin: 0 0 0.2em 0.9em;
+}
+
+.hero__button__arrow{
+  font-size: calc(var(--hero-btn-fz) * 1.4);
+}
+
+.hero__button::before,
+.hero__button::after{
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 70%;
+  border-radius: 50%;
+  transform: scale(0, 0);
+  pointer-events: none;
+}
+
+.hero__button::before{
+  background-color: currentColor;
+}
+
+.hero__button::after{
+  border: 1px dashed currentColor;
+  opacity: 0.7;
+}
+
+.hero__button__flame{
+  position: absolute;
+  top: 16%;
+  right: 94%;
+  height: 1.9em;
+  filter: blur(1px) drop-shadow(1px 1px hsl(0 100% 100% / 0.2)) drop-shadow(-1px  -1px hsl(0 100% 100% / 0.2));
+  opacity: 0;
+}
+
+
+/* HERO SCENE !! EVERYTHING HERE IS VERY FINICKY!! MODIFY AT YOUR OWN RISK!!! */
+
+
+.hero__scene{
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+/* banner */
+
+.hero__banner-container{ /* only exists for the 10 degree tilt */
+  position: absolute;
+  display: grid;
+  place-items: center;
+  top: var(--hero-banner-top);
+  left: 50%;
+  font-size: var(--hero-banner-fz); /* has to be here, used for various banner sizings */
+  perspective: 40rem;
+  perspective-origin: 100% calc(100% + 5rem);
+  transform-style: preserve-3d; /* vv needs both vv */
+  transform: translateY(80vh) rotate(-10deg);
+}
+
+.hero__banner{
+  display: flex;
+  transform-style: preserve-3d; /* ^^ needs both ^^ */
+  transform: rotateY(-18deg) translateY(0.35em);
+  animation: heroBannerRotate 11.5s infinite linear 5s paused;
+}
+
+.hero__banner__panel{
+  position: absolute;
+  width: 1em;
+  height: 1.375em;
+  overflow: hidden;
+}
+
+.hero__banner__content{
+  position: absolute;
+  width: max-content;
+  font-family: var(--ff-secondary);
+  font-weight: 600;
+  color: hsl(348 83% 27%); /* darker --clr-crim */  
+}
+
+.hero__banner__logo{
+  background-image: conic-gradient(hsl(49 100% 42%), hsl(47 100% 37%), hsl(49 100% 40%), hsl(53 100% 42%),
+                                   hsl(49 100% 38%), hsl(47 100% 37%), hsl(49 100% 40%), hsl(53 100% 42%),
+                                   hsl(49 100% 38%), hsl(47 100% 37%), hsl(49 100% 40%), hsl(53 100% 42%),
+                                   hsl(49 100% 38%), hsl(47 100% 37%), hsl(49 100% 40%), hsl(53 100% 40%));
+  position: absolute;
+  display: grid;
+  place-items: center;
+  width: var(--hero-banner-logo-size);
+  height: var(--hero-banner-logo-size);
+  border-radius: 500px;
+  transform: translateZ(calc(0.5em +4vw));
+}
+
+.hero__banner__logo img{
+  width: calc(var(--hero-banner-logo-size) * 0.97);
+}
+
+
+/* FLOOR */
+
+
+.hero__walk{
+  position: relative;
+  display: flex; /* dunno why... but IS required */ 
+  align-items: flex-end;
+  bottom: 0;
+  height: 30vh;
+  transform-style: preserve-3d;
+  perspective: 100vh;
+  perspective-origin: 50% 1%;
+}
+
+.hero__floor{
+  background-image: radial-gradient(hsl(0 100% 100% / 0.2), hsl(253 85% 16%)),
+    repeating-conic-gradient(from 45deg,  hsl(253 85% 36%) 0deg 90deg,  hsl(253 85% 6%) 90deg 180deg);
+  background-size: 100%, max(8em, 16vw) max(8em, 16vw);/* values after the 100% are for the size of the squares*/
+  position: absolute;
+  width: 100%;
+  height: 350vh;
+  transform-origin: bottom;
+  transform: rotateX(85deg);
+  z-index: 1;
+  opacity: var(--op-floor);
+}
+
+
+/* MIN-WIDTH 672px */
+@media screen and (min-width: 672px) {
+
+
+  :root{
+    --hero-cont-top-marg: 9vmax;
+  }
+
+  .nav__menu{
+    position: revert;
+    display: revert;
+    transform: translateX(0);
+  }
+
+  .nav__menu__open-button,
+  .nav__menu__close-button,
+  .nav__menu__open-flame,
+  .nav__menu__close-flame,
+  .nav__ul::before{
+    display: none;
+  }
+  
+  .nav__ul{
+    background-image: none;
+    flex-direction: row;
+    align-items: center;
+    padding: 0;
+    filter: none;
+    transform: translateX(50vw);
+  }
+
+  .nav__li{
+    position: relative;
+    margin-bottom: 0;
+    transition: all 200ms;
+  }
+
+  .nav__li + .nav__li{
+    margin-left: var(--nav-li-marg-left);
+  }
+
+  .nav__li:not(.nav__li-4){
+    padding: 0;
+    transform: translate(0, 0);
+  }
+
+  .nav__li a{
+    display: flex; /* so the spans can be animated */
+  }
+
+  .nav__li:not(.nav__li-4)::after{
+    content: '';
+    background-color: currentColor;
+    position: absolute;
+    inset: 0;
+    border-radius: 500px;
+    box-shadow: 0 0 1em currentColor, 0 0 1.5em currentColor;
+    opacity: 0.25;
+    z-index: -1;
+    transform: scale(0, 0);
+  }
+}
+
+
+/* MIN-WIDTH: 1024px */
+@media screen and (min-width: 1024px) {
+  
+  
+  :root{
+    --sect-inline-marg: 12.5%;
+    --nav-fz: 1.3rem;
+    --sect-indicator-h2-fz: calc(1.25rem + 2.2vw);
+    --nav-li-marg-left: 4.5vw;
+    --hero-min-ht: 0;
+    --hero-cont-top-marg: 4vmax;
+    --hero-btn-fz: 1.2rem;
+    --hero-banner-top: -14vh;
+    --hero-banner-fz: min(5rem, calc(0.2rem + 2.1vw));
+    --hero-banner-logo-size: 19vw;
+  }
+}
+
+
+/* MIN-WIDTH: 1600px */
+@media screen and (min-width: 1600px) {
+
+
+  :root{
+    --nav-fz: calc(1.2vw + 0.5rem);
+    --nav-pad-top: calc(3vw + 1.5rem);
+    --hero-btn-fz: calc(0.75vw + 0.5rem);
+  }
+}

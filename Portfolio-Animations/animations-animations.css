@@ -1,0 +1,374 @@
+
+/* WATER */
+/* equivalent to Mask2.svg */
+@keyframes make-waves{
+  to{
+    d: path("M0.636353 208.195V0M0.636353 208.195V400.195H813.636V208.195C674.738 191.321 546.035 191.321 407.136 208.195C268.238 225.068 139.535 225.068 0.636353 208.195ZM813.636 208.188V0")
+  }
+}
+
+/* COINS PORTRAIT */
+@keyframes anim-gold-mobile {
+  0%{
+    z-index: 10;
+  }
+  25%{
+    top: 65vh;
+    left: calc(100vw - 1em);
+  }
+  40%{
+    top: calc(100vh - 1em);
+    left:34vw;
+  }
+  55%{
+    top: 65vh;
+    left: 0vw;
+    transform: rotate(-810deg);
+  }
+  100%{
+    top: var(--mobile-top-gold);
+    left: var(--mobile-left);
+    transform: rotate(-1440deg);
+    z-index: 1;
+  }
+}
+
+/* SILVER PORTRAIT ----------------------------------------------------------*/
+@keyframes anim-silver-mobile {
+  0%{
+    z-index: 10;
+  }
+  33%{
+    left: -25vw;
+    opacity: 1;
+  }
+  33.1%{
+    opacity: 0;
+  }
+  33.99%{
+    opacity: 0;
+  } 
+  34%{
+    left: 100vw;
+    opacity: 1;
+  }
+  75%{
+    left: calc(var(--mobile-left) - 8vw);
+    transform: rotateY(5400deg);
+  }
+  88%{
+    left: calc(var(--mobile-left) - 8vw);
+    transform: rotateY(5400deg);
+  }
+  92%{
+    left: calc(var(--mobile-left) - 4vw);
+    transform: rotateY(5400deg);
+  }
+  98%{
+    left: calc(var(--mobile-left) - 4vw);
+    transform: rotateY(5400deg);
+  }
+  100%{
+    left: var(--mobile-left);
+    transform: rotateY(5400deg);
+    z-index: 1;
+  }
+}
+
+/* BRONZE PORTRAIT */
+@keyframes anim-bronze-mobile { 
+  0%{
+    z-index: 50;
+    transform: scale(1);
+  }
+  6%{
+    transform: scale(1.5);
+  }
+  17%{
+    transform: scale(1.5);
+  }
+  23%{
+    transform: scale(2.3);
+  }
+  34%{
+    transform: scale(2.3);
+  }
+  40%{
+    transform: scale(3.6);
+  }
+  51%{
+    transform: scale(3.6);
+  }
+  57%{
+    transform: scale(6);
+  }
+  68%{
+    transform: scale(6);
+  }
+  76.9%{
+    transform: scale(15);
+  }
+  77%{
+    transform: scale(500);
+  }
+  77.1%{
+    transform: scale(0);
+  }
+  85%{
+    transform: scale(0);
+  }
+  88%{
+    transform: scale(1.2);
+  }
+  90%{
+    transform: scale(1);
+    z-index: 1;
+  }
+}
+
+/* TITANIUM-WRAPPER PORTRAIT */
+/* repeats 6x, 3 up, 3 down */
+@keyframes anim-titanium-wrapper-mobile {
+  0%{
+    top: var(--mobile-top-titanium);/* 77.5vh */
+  }
+  3.125%{
+    top: 76.5vh;
+  }
+  6.25%{
+    top: 55.5vh;
+  }
+  12.5%{
+    top: 44.5vh;
+  }
+  25%{
+    top: 33.5vh;
+  }
+  50%{
+    top: 22vh;
+  }
+    100%{
+    top: 11vh;
+  }   
+}
+  
+/* TITANIUM COIN PORTRAIT -------------------------------------------------*/
+@keyframes anim-titanium-coin-mobile {
+  0%{
+    z-index: 10;
+  }
+  25%{
+    transform: translateX(-30vw) rotate(-90deg);
+  }
+  50%{
+    transform: translateX(30vw) rotate(90deg);
+  }
+  75%{
+    transform: translateX(0vw) rotate(-90deg);
+  }
+  88%{
+    transform: translateX(0vw) rotate(-90deg);
+  }
+  90%{
+    transform: translateY(-8vh) rotate(-90deg);
+  }
+  92%{
+    transform: translateX(0vw) rotate(0deg);
+    z-index: 1;
+  }
+}
+
+
+/* LANSCAPE */
+
+/* GOLD LANSCAPE */
+@keyframes anim-gold-desktop {
+  0%{
+    z-index: 10;
+  }
+  25%{
+    top: 0vh;
+    left: 75vs;
+  }
+  40%{
+    top: 40vh;
+    left: calc(100vw - 1em);
+  }
+  55%{
+    top: calc(100vh - 1em);
+    left: 50vw;
+    transform: rotate(-810deg);
+  }
+  100%{
+    top: var(--desktop-top);
+    left: var(--desktop-left-gold);
+    transform: rotate(-1440deg);
+    z-index: 1;
+  }
+}
+
+/* SILVER LANSCAPE */
+@keyframes anim-silver-desktop {
+  0%{
+    z-index: 10;
+  }
+  33%{
+    left: -25vw;
+    opacity: 1;
+  }
+  33.01%{
+    opacity: 0;
+  }
+  33.99%{
+    opacity: 0;
+  }
+  34%{
+    left: 100vw;
+    opacity: 1;
+  }
+  75%{
+    left: calc(var(--desktop-left-silver) - 6vw);
+    transform: rotateY(5400deg);
+  }
+  88%{
+    left: calc(var(--desktop-left-silver) - 6vw);
+    transform: rotateY(5400deg);
+  }
+  92%{
+    left: calc(var(--desktop-left-silver) - 3vw);
+    transform: rotateY(5400deg);
+  }
+  98%{
+    left: calc(var(--desktop-left-silver) - 3vw);
+    transform: rotateY(5400deg);
+  }
+  100%{
+    left: var(--desktop-left-silver);
+    transform: rotateY(5400deg);
+    z-index: 1;
+  }
+}
+
+/* TITANIUM WRAPPER LANSCAPE */
+@keyframes anim-titanium-wrapper-desktop {
+  0%{
+    top: var(--desktop-top);
+  }
+  5%{
+    top: calc(100vh - 1em);
+  }
+  /* from here, percent changes by 0.5, 1, 2, 4, 8, 8, 4, 2, 1, 0.5 and top changes 
+    by 18vh down/up until third jump, which is higher and lands at --desktop-top */
+  5.5%{
+    top: 82vh;
+  }
+  6.5%{
+    top: 64vh;
+  }
+  8.5%{
+    top: 46vh;
+  }
+  12.5%{
+    top: 28vh;
+  }
+  20.5%{
+    top: 10vh;
+  }
+  28.5%{
+    top: 28vh;
+  }   
+  32.5%{
+    top: 46vh;
+  }
+  34.5%{
+    top: 64vh;
+  }
+  35.5%{
+    top: 82vh;
+  }
+  36%{
+    top: calc(100vh - 1em);
+  }  
+  36.5%{
+    top: 82vh;
+  }
+  37.5%{
+    top: 64vh;
+  }  
+  39.5%{
+    top: 46vh;
+  }  
+  43.5%{
+    top: 28vh;
+  }  
+  51.5%{
+    top: 10vh;
+  }    
+  59.5%{
+    top: 28vh;
+  }
+  63.5%{
+    top: 46vh;
+  }
+  65.5%{
+    top: 64vh;
+  }
+  66.5%{
+    top: 82vh;
+  }
+  67%{
+    top: calc(100vh - 1em);
+  }
+  67.5%{
+    top: 76vh;
+  }  
+  68.5%{
+    top: 52vh;
+  }  
+  70.5%{
+    top: 28vh;
+  } 
+  74.5%{
+    top: 4vh;
+  }
+  82.5%{
+    top: -38vh;
+  }
+  90.5%{
+    top: 4vh;
+  }
+  91.5%{
+    top: var(--desktop-top);
+  }
+}
+
+
+/* TITANIUM COIN LANSCAPE */
+@keyframes anim-titanium-coin-desktop{
+  0%{
+    z-index: 10;
+  }
+  27%{
+    transform: translate(-35vw, 0vh) rotate(-370deg);
+  }
+  54%{
+    transform: translate(-72vw, 0vh) rotate(-730deg);
+  }
+    72%{
+    transform: translate(0vw, 0vh) rotate(180deg);
+  }
+  /* below is the pause and little hop/spin */
+  95%{
+    transform: translate(0vw, 0vh) rotate(180deg);
+  }
+
+  97%{
+    transform: translate(0vw, -12vh) rotate(90deg);
+  }
+
+  99%{
+    transform: translate(0vw, 0vh) rotate(0deg);
+    z-index: 1;
+  }
+}
+ 

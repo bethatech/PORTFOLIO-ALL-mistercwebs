@@ -1,0 +1,47 @@
+:root{
+  --monstercat-padding: 2.6em;
+}
+
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  background-color: #fff;
+  overflow: hidden;
+}
+
+nav{
+  padding: 0.5em 0;
+}
+
+nav img{
+  display: block;
+  margin: 0 auto;
+  width: 70vw;
+}
+
+section{
+  background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 1)), 
+    url(../Monstercat/monstercat-images/other-images/Conro---Level-Days-LP.webp);
+  background-position:  center;
+  background-size: 180%;
+  background-blend-mode: darken;
+  padding: var(--monstercat-padding) var(--monstercat-padding) 7em;
+  text-align: center;
+}
+
+section img{
+  width: 100%;
+}
+
+#monstercat__link{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+

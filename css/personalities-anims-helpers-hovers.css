@@ -1,0 +1,162 @@
+/* CONTENTS
+    tard stuff 8
+    hoverer flames anims 73
+    portrait helper classes  87
+    portrait loading anims 157
+*/
+
+.tard--drop-shadow{
+  filter: var(--tard-d-shadow);  
+}
+
+.special-tard-d-shadow{  /* middles and bottoms */
+  filter: var(--special-tard-d-shadow);
+}
+
+
+/* TARD HELPERS */
+
+.personalities__tard-1.loading-anim,
+.personalities__tard-3.loading-anim{
+  transform-origin: 5% 30%;
+  transform: translateX(-25vw);
+  animation: fromLeft 2300ms forwards 200ms;
+}
+
+.personalities__tard-2.loading-anim,
+.personalities__tard-4.loading-anim{
+  transform-origin: 95% 30%;
+  transform: translateX(25vw);
+  animation: fromRight 2300ms forwards 200ms;
+}
+
+/* wide screen 1260px */
+@media screen and (min-width: 1260px){
+  .personalities__tard.loading-anim{
+    transform: translateX(0) rotate(0);
+    animation: none;
+  }
+}
+
+
+/* TARD LOADING ANIMS. Dancing anims in main-app.js */
+
+@keyframes fromLeft {
+  0%{
+    opacity: 1;
+    transform: translateX(-25vw) rotate(30deg);
+  }
+  60%{
+    transform: translateX(2%) rotate(-7deg);
+  }
+  100%{
+    opacity: 1;
+    transform: translateX(0) rotate(0);
+  }
+}
+
+@keyframes fromRight {
+  0%{
+    opacity: 1;
+    transform: translateX(25vw) rotate(-30deg);
+  }
+  60%{
+    transform: translateX(-2%) rotate(7deg);
+  }
+  100%{
+    opacity: 1;
+    transform: translateX(0) rotate(0);
+  }
+}
+
+
+/* HOVERER FLAMES */
+.personalities__hoverer__flame.running{
+  animation-play-state: running;
+}
+
+@keyframes hoverFlameFlicker {
+  0%{opacity: 0.15;}
+  40%{opacity: 1;}
+  50%{opacity: 0.15;}
+  90%{opacity: 0.7;}
+  100%{opacity: 0.15;}
+}
+
+
+/* PORTRAIT HELPERS */
+
+.personalities__portrait-1.loading-anim,
+.personalities__portrait-3.loading-anim{
+  opacity: 1;
+  transform-origin: right;
+  transform: rotateY(-100deg);
+  animation: rotateYZero 1200ms ease-out forwards;
+}
+
+.personalities__portrait-2.loading-anim,
+.personalities__portrait-4.loading-anim{
+  opacity: 1;
+  transform-origin: left;
+  transform: rotateY(100deg);
+  animation: rotateYZero 1200ms ease-out forwards;
+}
+
+
+/* PORTRAIT HELPERS @ MIN-WIDTH: 832px */
+
+
+@media screen and (min-width: 832px) {
+  .personalities__portrait-1.loading-anim,
+  .personalities__portrait-3.loading-anim{
+    opacity: 1;
+    transform-origin: left;
+    transform: rotateY(100deg);
+    animation: rotateYZero 1200ms ease-out forwards;
+  }
+
+  .personalities__portrait-2.loading-anim,
+  .personalities__portrait-4.loading-anim{
+    opacity: 1;
+    transform-origin: right;
+    transform: rotateY(-100deg);
+    animation: rotateYZero 1200ms ease-out forwards;
+  }
+}
+
+
+/* PORTRAIT HELPERS @ MIN-WIDTH: 1280px */
+
+
+@media screen and (min-width: 1260px) {
+  .personalities__portrait-2.loading-anim,
+  .personalities__portrait-4.loading-anim{
+    transform-origin: left;
+    transform: rotateY(100deg);
+    animation: rotateYZero 2000ms ease-out forwards;
+  }
+
+  .personalities__portrait-1.loading-anim{
+    animation-delay: 50ms;
+  }
+  
+  .personalities__portrait-2.loading-anim{
+    animation-delay: 250ms;
+  }
+
+  .personalities__portrait-3.loading-anim{
+    animation-delay: 450ms;
+  }
+
+  .personalities__portrait-4.loading-anim{
+    animation-delay: 650ms;
+  }
+}
+
+
+/* PORTRAIT LOADING ANIM */
+
+
+@keyframes rotateYZero {
+  to{transform: rotateY(0deg);}
+}

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>C-Webs Animation Samples</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Handlee&family=Poppins:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./animations-style.css">
+  <link rel="stylesheet" href="./animations-animations.css">
+  <script src="./animations-app.js" defer></script>
+</head>
+<body>
+  <main>
+    <header>
+      <nav>
+        <button id="animations__close-button" type="button" title="Close window" onclick="window.open('', '_self', ''); window.close();">
+          <img class="nav__logo" src="../images/hero-images/FULL-LOGO-CLIPPED-2022-06-12.svg" alt="click here to close">
+          <span>Close</span>
+        </button>
+      </nav>
+    </header>
+    <div class="section__titles">
+      <h2 class="title title__water">Wavy</h2>
+      <h2 class="title title__candles">Lit 3D Candles</h2>
+      <h2 class="title title__coins">Coins Gone Wild</h2>
+    </div>
+    
+    <!-- water -->
+ 
+    <section class="water" id="water">
+      <h3>Water</h3>
+      <!-- This is the only I could make this animation work:
+        an svg with a viewbox defining a suitable aspect ratio
+        AND containing a clip-path with an id and these attributes.
+        Those insane scale() numbers are 1/width x 1/height,
+        THEN I had to define the path in style.css (!?!)
+        AND set position of the svg to "absolute" so it wouldn't take up space in the grid -->
+      <svg  id="water__svg" viewBox="0 0 815 385" data-observe="water">
+        <clipPath id="water__svg__clip-path" clipPathUnits="objectBoundingBox" transform="scale(0.00123 0.00260)">
+          <path id="water__clip-path__path"/>
+        </clipPath>
+      </svg>
+
+      <p class="more-indicator"><span>More</span> &#9759;</p>
+    </section>
+
+    <!-- candles -->
+
+    <section class="candles" id="candles">
+      <div class="candles__candle-wrapper">
+        <div class="candles__flame-wrapper" data-observe="candle">
+          <div class="candles__flame candles__flame__white"></div>
+          <div class="candles__flame candles__flame__yellow"></div>
+          <div class="candles__flame candles__flame__orange"></div>
+          <div class="candles__flame candles__flame__red"></div>
+          <div class="candles__base candles__base__blue"></div>
+          <div class="candles__base candles__base__black"></div>
+        </div>
+        <div class="candles__candlestick"></div>
+      </div>
+
+      <div class="candles__candle-wrapper candles__wrappers-2-and-6">
+        <div class="candles__flame-wrapper" data-observe="candle">
+          <div class="candles__flame candles__flame__white"></div>
+          <div class="candles__flame candles__flame__yellow"></div>
+          <div class="candles__flame candles__flame__orange"></div>
+          <div class="candles__flame candles__flame__red"></div>
+          <div class="candles__base candles__base__blue"></div>
+          <div class="candles__base candles__base__black"></div>
+        </div>
+        <div class="candles__candlestick"></div>
+      </div>
+
+      <div class="candles__candle-wrapper candles__wrappers-3-and-5">
+        <div class="candles__flame-wrapper" data-observe="candle">
+          <div class="candles__flame candles__flame__white"></div>
+          <div class="candles__flame candles__flame__yellow"></div>
+          <div class="candles__flame candles__flame__orange"></div>
+          <div class="candles__flame candles__flame__red"></div>
+          <div class="candles__base candles__base__blue"></div>
+          <div class="candles__base candles__base__black"></div>
+        </div>
+        <div class="candles__candlestick"></div>
+      </div>
+
+      <div class="candles__candle-wrapper candles__wrapper-4">
+        <div class="candles__flame-wrapper" data-observe="candle">
+          <div class="candles__flame candles__flame__white"></div>
+          <div class="candles__flame candles__flame__yellow"></div>
+          <div class="candles__flame candles__flame__orange"></div>
+          <div class="candles__flame candles__flame__red"></div>
+          <div class="candles__base candles__base__blue"></div>
+          <div class="candles__base candles__base__black"></div>
+        </div>
+        <div class="candles__candlestick"></div>
+      </div>
+      
+      <div class="candles__candle-wrapper candles__wrappers-3-and-5">
+        <div class="candles__flame-wrapper" data-observe="candle">
+          <div class="candles__flame candles__flame__white"></div>
+          <div class="candles__flame candles__flame__yellow"></div>
+          <div class="candles__flame candles__flame__orange"></div>
+          <div class="candles__flame candles__flame__red"></div>
+          <div class="candles__base candles__base__blue"></div>
+          <div class="candles__base candles__base__black"></div>
+        </div>
+        <div class="candles__candlestick"></div>
+      </div>
+
+      <div class="candles__candle-wrapper candles__wrappers-2-and-6">
+        <div class="candles__flame-wrapper" data-observe="candle">
+          <div class="candles__flame candles__flame__white"></div>
+          <div class="candles__flame candles__flame__yellow"></div>
+          <div class="candles__flame candles__flame__orange"></div>
+          <div class="candles__flame candles__flame__red"></div>
+          <div class="candles__base candles__base__blue"></div>
+          <div class="candles__base candles__base__black"></div>
+        </div>
+        <div class="candles__candlestick"></div>
+      </div>
+
+      <div class="candles__candle-wrapper">
+        <div class="candles__flame-wrapper" data-observe="candle">
+          <div class="candles__flame candles__flame__white"></div>
+          <div class="candles__flame candles__flame__yellow"></div>
+          <div class="candles__flame candles__flame__orange"></div>
+          <div class="candles__flame candles__flame__red"></div>
+          <div class="candles__base candles__base__blue"></div>
+          <div class="candles__base candles__base__black"></div>
+        </div>
+        <div class="candles__candlestick"></div>
+      </div>
+      <p class="more-indicator"><span>More</span> &#9759;</p>
+    </section>
+
+    <!-- coins -->
+
+    <section class="coins" id="coins" data-observe="coins">
+      <div class="coins__coin coin__gold" data-observe="coin">
+      </div>
+      <div class="coins__coin coin__silver" data-observe="coin">
+      </div>
+      <div class="coins__coin coin__bronze" data-observe="coin">
+      </div>
+      <div class="coins__titanium-wrapper" data-observe="coin">
+        <div class="coins__coin coin__titanium" data-observe="coin">
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

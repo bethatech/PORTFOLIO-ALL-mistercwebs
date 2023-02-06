@@ -1,0 +1,139 @@
+
+/* CONTENTS:
+  lamps 14
+  flames 101
+  @media 3000px 131 (make bigger, look brighter)
+*/
+
+:root{
+  --lamp-ht-multiplier: 10vh;
+  --clr-orng: hsl(14, 80%, 72%);
+}
+
+
+/* LAMPS */
+
+.hero__lamprow{
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: var(--op-lamp); 
+}
+
+.hero__lamp{ 
+  position: relative;
+}
+
+.hero__lamp__post{
+  height: 100%;
+  filter: drop-shadow(1px 0 var(--clr-yell));
+}
+
+.hero__lamp-left .hero__lamp__post{
+  transform: rotateY(180deg);
+}
+
+
+/* lamprow-1 */
+
+.hero__lamprow-1{
+  padding-top: 2vh;
+  bottom: 0;
+  width: 100%;
+  overflow: hidden;
+}
+
+.hero__lamprow-1 .hero__lamp{
+  height: calc(4.8 * var(--lamp-ht-multiplier));
+}
+
+.hero__lamprow-1 .hero__lamp-left{
+ left: -2rem;
+}
+
+.hero__lamprow-1 .hero__lamp-right{
+  right: -2rem;
+}
+
+
+/* lamprow-2 */
+
+.hero__lamprow-2{
+  bottom: 65%;
+  width: 49%;
+}
+
+.hero__lamprow-2 .hero__lamp{
+  height: calc(2.29 * var(--lamp-ht-multiplier));
+}
+
+.hero__lamprow-2 .hero__lamp-left{
+  left: -0.75rem;
+}
+
+.hero__lamprow-2 .hero__lamp-right{
+  right: -0.75rem;
+}
+
+
+/* lamprow-3 */
+
+.hero__lamprow-3{
+  bottom: 98%;
+  width: 23.5%;
+}
+
+.hero__lamprow-3 .hero__lamp{
+  height: var(--lamp-ht-multiplier);
+}
+
+.hero__lamprow-3 .hero__lamp-left{
+  left: -0.15rem;
+}
+
+.hero__lamprow-3 .hero__lamp-right{
+  right: -0.15rem;
+}
+
+
+/* flames */
+
+.hero__lamp__flame{
+  position: absolute;
+  height: 7%;
+  width: 95%;
+  top: 0.05rem;
+  left: 50%;
+  border-radius: 50%;
+  transform: translateX(-50%);
+  opacity: 0.25;
+  transition: opacity 100ms;
+}
+
+.hero__lamprow-1 .hero__lamp__flame{
+  box-shadow: -0 -0.45em 0.45em var(--clr-orng), -0 -0.45em 0.45em var(--clr-orng),
+              -0 -0.75em 0.45em var(--clr-yell), -0 -0.75em 0.45em var(--clr-yell);
+}
+
+.hero__lamprow-2 .hero__lamp__flame{
+  box-shadow: 0 -0.25em 0.25em var(--clr-orng), 0 -0.25em 0.25em var(--clr-orng),
+              0 -0.4em 0.25em var(--clr-yell), 0 -0.4em 0.25em var(--clr-yell);
+}
+
+.hero__lamprow-3 .hero__lamp__flame{
+  box-shadow: 0 -0.1em 0.1em var(--clr-orng), 0 -0.1em 0.1em var(--clr-orng),
+              0 -0.2em 0.1em var(--clr-yell), 0 -0.2em 0.1em var(--clr-yell);
+}
+
+
+/* MIN-WIDTH: 3000px */
+@media screen and (min-width: 3000px) {
+
+
+  .hero__lamp__flame{
+    font-size: 2rem;
+  }
+}
+

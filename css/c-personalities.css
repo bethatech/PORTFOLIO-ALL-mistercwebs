@@ -1,0 +1,510 @@
+/* CONTENT
+    mobile styles
+      tards 44
+      finicky tard assembly stuff 77
+      staff 167
+      scrolls 213
+    query 576px root/grid-container/tards 253
+                staff 303
+    query 832px root/grid-container/tards 331
+                staff 376
+    query 1260px root/grid-container/tards 390
+                staff 452
+    query 1600px 481
+    query 3000px 499
+*/
+
+:root{
+  --fz-tard: calc(0.3rem + 1.4vmax); /* not changed in @media. controls size of most everything */
+  --fz-scroll: calc(0.75rem + 1.4vw);
+  /* these three get changed in @media */
+  --personalities-marg-top: 6vmax;
+  --col-gap: 8vw;
+  --row-gap: 7vw;
+  --scroll-color: hsl(43, 50%, 75%); /* JUST A TEST */
+}
+
+.personalities{
+  --personalities-marg-bottom: 2vmax;
+  background-color: #000;
+  /* CODED IN HEADER OF INDEX.HTML --> background-image: url(../images/personalities-images/TARD-PALACE-MIRROR.svg); */
+  background-position: top 5% left 35%;
+  background-size: cover;
+  position: relative;
+  padding-bottom: calc(var(--personalities-marg-bottom) * 1.25);
+}
+
+.personalities__grid-container{
+  margin: var(--personalities-marg-top) var(--sect-inline-marg) 0;
+}
+
+
+/* MOBILE STYLES */
+
+/* TARDS */
+
+/* all vertical alignment controlled by staff in mobile/tablet view EXCEPT tard-5
+  --AND-- watch tard-3 bottom 3 col view */
+.personalities__tard{
+  --tard-d-shadow: drop-shadow(0.03em -0.03em hsl(9 80% 75%));
+  --special-tard-d-shadow: drop-shadow(0.03em 0px hsl(9 80% 75%));  /* --KEEP EVERYTHING IN EM UNITS-- */
+  position: relative;
+  padding: 6em 3.5em 0;
+  width: max-content;  /* keeps 'em 7em (padding above) wide */
+  font-size: var(--fz-tard);
+  opacity: 0;
+}  
+
+.personalities__tard *{
+  font-size: inherit;
+}
+
+.personalities__tard-2,
+.personalities__tard-4{
+  margin-left: auto;
+}
+
+.personalities__tard-5{
+  margin-top: 7em;
+  opacity: 1;
+}
+
+.personalities__tard > img{
+  position: absolute;
+}
+
+
+/* finicky tard & hoverer assembly stuff */
+
+.personalities__tard:not(.personalities__tard-5) > img:first-of-type{
+  bottom: 1.5em;
+}
+
+.personalities__horn-player__head{
+  transform-origin: 60% 80%;
+  bottom: 3.8em;
+  left: 2.1em;
+  height: 2.05em;
+}
+
+.personalities__horn-player__middle{ 
+  transform-origin: 40% 75%;
+  bottom: 2.05em;
+  left: 2.3em;
+  height: 3.65em;
+}
+
+.personalities__horn-player__bottom{
+  left: 2.5em;
+  height: 1.55em;
+}
+
+.personalities__big-clare__bottom{
+  left: 2.95em;
+  height: 1.5em;
+}
+
+.personalities__big-clare__top{
+  transform-origin: 50% 80%;
+  bottom: 2.25em;
+  left: 2.2em;
+  height: 3.3em;
+}
+
+.personalities__reg-clare__all{
+  transform-origin: 50% 100%;
+  left: 2.3em;
+  height: 2.6em;
+  aspect-ratio: 84 / 94;
+}
+
+.personalities__barritone__all{
+  transform-origin: 50% 100%;
+  left: 2.5em;
+  height: 4.3em;
+  aspect-ratio: 89 / 141;
+}
+
+.personalities__programmer__gear{
+  bottom: 0;
+  left: 1em;
+  height: 7.8em;
+  filter: drop-shadow(0.04em -0.04em hsl(9 32% 40%));
+}
+
+.personalities__programmer__body{
+  bottom: 0;
+  left: 4.6em;
+  height: 6em;
+}
+
+.personalities__programmer__head{
+  transform-origin: 75% 80%;
+  bottom: 4.7em;
+  left: 5.6em;
+  height: 3.35em;
+}
+
+
+/* HOVERERS */
+
+.personalities__hoverer{
+  bottom: 0.15em;
+  left: 1.8em;
+  height: 3em;
+}
+
+.personalities__hoverer__flame{
+  bottom: 0;
+  left: 2.1em;
+  height: 0.38em;
+  filter: blur(1.5px) drop-shadow(1px 1px hsl(0 100% 100% / 0.1))  drop-shadow(-1px -1px hsl(0 100% 100% / 0.1));
+  animation: hoverFlameFlicker 350ms linear infinite;
+  animation-play-state: paused;
+}
+
+
+/* STAFF / FRAMES mobile view */
+
+.personalities__staff{
+  position: relative;
+  width: 100%;
+  perspective: 50rem;
+}
+
+.personalities__staff-1{
+  margin: 1em 0 1.7em;
+}
+
+.personalities__staff-2{
+  margin: 0 0 2.4em;
+}
+
+.personalities__staff-3{
+  margin: 0 0 1.9em;
+}
+
+.personalities__staff-4{
+  margin: 1em 0 0;
+}
+
+.personalities__staff-container{
+  display: grid;
+  place-items: center;
+  width: 100%;
+  perspective: 50rem;
+}
+
+.personalities__frame{
+  width: 100%;
+  aspect-ratio: 317 / 424;
+  z-index: 1;
+}
+
+.personalities__portrait{
+  position: absolute;
+  opacity: 0;
+  z-index: 0;
+  width: 74.75%;
+  aspect-ratio: 233 / 341;
+}
+
+
+/* SCROLLS mobile view */
+
+.personalities__scroll{
+  position: absolute;
+  display: grid;
+  place-items: center;
+  bottom: -7%;
+  width: max(16em, 85%);
+  aspect-ratio: 286 / 168; /* from svg viewBox */
+  z-index: 1;
+}
+
+.personalities__scroll__img{
+  position: absolute;
+}
+
+.personalities__scroll__copy{
+  padding-left: 7%;
+  width: 80%;
+  font-size: var(--fz-scroll);
+  letter-spacing: 0.2px;
+  color: var(--clr-dk-brown);
+  z-index: 2;
+  transform: skewY(-7.4deg);
+}
+
+.personalities__scroll__copy h4{
+  margin-bottom: 0.25em;
+  font-size: 1.35em;
+  font-weight: 900;
+  color: inherit;
+}
+
+.personalities__scroll__copy p{
+  font-size: 1.1em;
+  font-weight: 500;
+  color: inherit;
+}
+
+
+/* MIN-WIDTH: 576px 3 COLS */
+@media screen and (min-width: 576px) {
+
+
+  :root{
+    --fz-scroll: calc(0.75rem + 0.9vw)
+  }
+
+  .personalities__grid-container{
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-areas:
+      "tard-1 staff-1 staff-1"
+      "staff-2 staff-2 tard-2"
+      "tard-3 staff-3 staff-3"
+      "staff-4 staff-4 tard-4"
+      "tard-5 . .";
+    place-items: center;
+    column-gap: var(--col-gap);
+    row-gap: var(--row-gap);
+  }
+
+  .personalities__tard{
+    margin: 0;
+  }
+
+  .personalities__tard-1{
+    grid-area: tard-1;
+  }
+
+  .personalities__tard-2{
+    grid-area: tard-2;
+  }
+
+  .personalities__tard-3{
+    grid-area: tard-3;
+    bottom: 1.5em;  /* KLUGE: prob wanna remove later */
+  }
+
+  .personalities__tard-4{
+    grid-area: tard-4;
+  }
+  
+  .personalities__tard-5{
+    grid-area: tard-5;
+    margin-top: 4em;
+    margin-bottom: 1em;
+  }
+
+
+  /* STAFF 576px 3 COLS */
+
+  .personalities__staff{
+    margin-bottom: 0;
+  }
+
+  .personalities__staff-1{
+    grid-area: staff-1;
+    margin: 0 0 1.2em;
+  }
+
+  .personalities__staff-2{
+    grid-area: staff-2;
+    margin: 0;
+  }
+  
+  .personalities__staff-3{
+    grid-area: staff-3;
+    margin: 0 0 3em;
+  }
+
+  .personalities__staff-4{
+    grid-area: staff-4;
+    margin: 0;
+  }
+}
+
+
+/* MIN-WIDTH: 832px 2 COLS */
+@media screen and (min-width: 832px) {
+
+
+  :root{
+    --personalities-marg-top: 7vmax;
+    --col-gap: calc(var(--sect-inline-marg) * 1.1);
+    --row-gap: 2vw;
+    --fz-scroll: calc(0.7rem + 0.55vw);
+  }
+
+ .personalities__grid-container{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-areas: 
+    "tard-1 tard-2"
+    "staff-1 staff-2"
+    "tard-3 tard-4"
+    "staff-3 staff-4"
+    "tard-5 .";
+  }
+
+  .personalities__tard:not(.personalities__tard-5){
+    margin: 0 2.2vw;
+  }
+
+  .personalities__tard-1,
+  .personalities__tard-3,
+  .personalities__tard-5{
+    justify-self: start;
+  }
+
+  .personalities__tard-2,
+  .personalities__tard-4{
+    justify-self: end;
+  }
+
+  .personalities__tard-3{
+    bottom: 0; /*  Nice Reset from ~80 lines ^^up^^ */
+  }
+
+  .personalities__tard-5{
+    margin-top: 3em;
+  }
+
+
+  /*  STAFF 832px  2 COLS*/
+
+  .personalities__staff-1,
+  .personalities__staff-2{
+    margin: 0 0 1.5em;
+  }
+
+  .personalities__staff-3,
+  .personalities__staff-4{
+    margin: 0.5 0 0;
+  }
+}
+
+
+/* MIN-WIDTH: 1260px */
+@media screen and (min-width: 1260px) {
+
+
+  :root{
+    --personalities-marg-top: 7vmax;
+    --col-gap: 2vw;
+    --row-gap: 0vw;
+    --fz-tard: calc(0.1rem + 1.1vmax);
+    --fz-scroll: calc(0.1rem + 1.1vw);
+  }
+
+  .personalities__grid-container{
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-rows: min-content auto;
+    grid-template-areas: 
+    "staff-1 staff-2 staff-3 staff-4"
+    "tard-5 . . tard-1";
+  }
+  
+  .personalities__hoverer,
+  .personalities__hoverer__flame{
+    display: none;
+  }
+  
+  .personalities__tard{
+    align-self: end;
+    justify-self: end;
+    opacity: 1;
+  }
+
+  .personalities__tard-1{
+    grid-area: tard-1;
+    right: 3.5em;
+    bottom: 1.7em;
+  }
+
+  .personalities__tard-2{
+    grid-area: tard-1;
+    bottom: 0.75em;
+    left: 1.5em;
+    z-index: 2;
+  }
+
+  .personalities__tard-3{
+    grid-area: tard-1;
+    bottom: 2.25em;
+  }
+
+  .personalities__tard-4{
+    grid-area: tard-1;
+    right: 2em;
+    bottom: 0.3em;
+  }
+
+  .personalities__tard-5{
+    align-self: end;
+    justify-self: center;
+    margin: 6em 0 0;
+  }
+
+
+  /* STAFF 1260px */
+
+  .personalities__staff{
+    margin: 0;
+    width: 115%;
+    left: 1.1vw;
+  }
+  
+  .personalities__staff-container{
+    transform: rotateY(31deg);
+  }
+  
+  .personalities__staff-2{
+    transform: translateY(0.5%); /* don't know why it's needed but... */
+  }
+
+  .personalities__scroll{
+    width: 100%;
+    transform: rotateY(-17deg);
+  }
+
+  .personalities__scroll__copy{
+    padding-left: 0;
+    letter-spacing: 0.1em;
+    transform: skewY(-7deg) rotateY(19deg);
+  }
+}
+
+
+/* MIN-WIDTH: 1600px */
+@media screen and (min-width: 1600px) {
+
+
+  .personalities__staff{
+    left: 1.35vw;
+  }
+
+  .personalities__scroll{
+    transform: translateX(-2%) rotateY(-17deg);
+  }
+
+  .personalities__scroll__copy{
+    padding-left: 0.5em;
+  }
+}
+
+
+/* MIN-WIDTH: 3000px */
+@media screen and (min-width: 3000px) {
+
+
+  .personalities__staff{
+    left: 2.4vw;
+  }
+
+  .personalities__scroll{
+    transform: translateX(-6%) rotateY(-17deg);
+  }
+}

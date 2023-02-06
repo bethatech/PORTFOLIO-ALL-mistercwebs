@@ -1,0 +1,85 @@
+
+/* this page for display in portfolio projects section */
+
+:root{
+  --clr-gold: gold;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.water__main{
+  background-color: black;
+  background-image: url(./animations-images/TILED-LOGO-BG-VERT-2022-06-18.svg);
+  background-size: 25vmax;
+  height: 100vh; 
+  font-family: 'Handlee', sans-serif;
+  color: var(--clr-gold);
+}
+
+.water__link{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.water__title{
+  position: absolute;
+  top: 0.6em;
+  left: 50%;
+  width: max-content;
+  font-size: calc(3vmax + 0.6rem);
+  text-align: center;
+  transform: translateX(-50%);
+  z-index: 5;
+}
+
+.water__water{
+  background-color: transparent;
+  position: relative;
+  padding: 0 8vw;
+  width: 100%;
+  height: 100vh;
+  scroll-snap-align: start;
+  overflow: hidden;
+}
+
+/* H3 & ::AFTER */
+
+.water__water h3{
+  position: relative;
+  top: 50%;
+  font-size: 26vw; /* <-- MAGIC NUMBER */
+  font-family: 'Poppins', sans-serif;
+  -webkit-text-stroke: 1px hsl(188, 100%, 60%);
+  color: transparent;
+  transform: translateY(-50%);
+}
+
+.water__water h3::after{
+  content: 'Water';
+  position: absolute;
+  left: 0;
+  color: hsl(188, 100%, 60%);
+  clip-path: url(#water__svg__clip-path);
+}
+
+#water__svg{
+  position: absolute;
+  width: 0;
+}
+
+#water__clip-path__path{
+  d: path("M1.34692 207.5V0M1.34692 207.5V399.5H814.347V207.5C675.449 244.373 546.745 244.373 407.847 207.5C268.949 170.627 140.245 170.627 1.34692 207.5ZM814.347 207.507V0");
+  animation: make-waves 3s ease-in-out infinite alternate;
+}
+
+@keyframes make-waves{
+  to{
+    d: path("M1.13635 208.195V0M1.13635 208.195V400.195H814.136V208.195C675.238 171.321 546.535 171.321 407.636 208.195C268.738 245.068 140.035 245.068 1.13635 208.195ZM814.136 208.188V0")
+  }
+} 

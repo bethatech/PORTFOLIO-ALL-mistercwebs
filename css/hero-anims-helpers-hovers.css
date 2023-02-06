@@ -1,0 +1,293 @@
+/* CONTENTS
+    mobile nav menu container helper classes 12
+    nav__menu helpers 33
+    nav__li helpers 49
+    nav__li helper/hovers 672px 73
+    nav__li anims 672px 126
+    NAV BUTTONS 145
+    HERO BUTTON 213
+    HERO BANNER 275 
+*/
+
+html.auto{
+  scroll-behavior: auto;
+  scroll-padding: auto;
+}
+
+body.modal--open{
+  overflow: hidden;
+}
+
+.modal.open{
+  opacity: var(--op-modal);
+  pointer-events: all;
+}
+
+/* .section__h2 */
+.section__h2.display-current-page{
+  opacity: 1;
+  transition: opacity 300ms;
+}
+
+
+/* NAV MENU SECTION */
+
+/*  MOBILE nav__menu helper classes */
+.nav__header.overflow-visible{
+  overflow: visible;
+}
+
+.nav__menu.open{
+  transform: translateX(10%);
+}
+
+.nav__menu.open--scrolled{
+  transform: translate(10%, var(--nav-pad-top));
+}
+
+
+/* MOBILE nav__li helper classes */
+
+.nav__li.display-current-page{
+  pointer-events: none;
+  opacity: 0.4; /* changes at 672px */
+}
+
+.nav__li-1.open{
+  transform: translate(-6.1em, 0);
+}
+
+.nav__li-2.open{
+  transform: translate(-4.9em, 0);
+}
+
+.nav__li-3.open{
+  transform: translate(-2.6em, 0);
+}
+
+.nav__li-4.open{
+  transform: translate(-0.5em, -0.4em);
+}
+
+
+/*  TAB/DESK nav__li helper/hovers */
+@media screen and (min-width: 672px) {
+
+
+  .nav__li.display-current-page{
+    opacity: 0.6; /* diff op 4 diff bg */
+    transition: opacity 200ms linear 100ms
+  } 
+
+  .nav__li:focus::after,
+  .nav__li:hover::after{
+    transform: scale(1, 1);
+  }
+
+  .nav__li-4:focus,
+  .nav__li-4:hover{
+    border-color: hsl(51 100% 50% / 0.8);
+  }
+
+  .nav__li:hover span:first-child{
+    animation: navSpanDance 300ms ease;
+  }
+
+  .nav__li:hover span:nth-child(2){
+    animation: navSpanDance 300ms ease 50ms;
+  }
+
+  .nav__li:hover span:nth-child(3){
+    animation: navSpanDance 300ms ease 100ms;
+  }
+
+  .nav__li:hover span:nth-child(4){
+    animation: navSpanDance 300ms ease 150ms;
+  }
+
+  .nav__li:hover span:nth-child(5){
+    animation: navSpanDance 300ms ease 200ms;
+  }
+
+  .nav__li:hover span:nth-child(6){
+    animation: navSpanDance 300ms ease 250ms;
+  }
+
+  .nav__li:hover span:nth-child(7){
+    animation: navSpanDance 300ms ease 300ms;
+  }
+  
+  .nav__li:hover span:nth-child(8){
+    animation: navSpanDance 300ms ease 350ms;
+  }
+}
+
+
+/* TAB/DESK nav__li anims */
+
+
+@keyframes navSpanDance{
+  0%{
+    transform: translateY(0em);
+  }
+  25%{
+    transform: translateY(-0.08em);
+  }
+  75%{
+    transform: translateY(0.08em);
+  }
+  100%{
+    transform: translateY(0em);
+  }  
+}
+
+
+/* NAV BUTTONS */
+
+/* MOBILE nav button helpers */
+/* used by nav buttons, pretty generic */
+.opacity{
+  opacity: 1;
+}
+
+.nOpacity{
+  opacity: 0;
+}
+
+.nav__menu__open-button.clicked{
+  animation: navMenuOpenButtonClicked 700ms ease-in forwards;
+}
+
+.nav__menu__open-button.reset{
+  animation: navMenuOpenButtonReset 700ms ease-out 300ms forwards;
+}
+
+.nav__menu__close-button.pre-animation{
+  /* activated when nav-menu opens. button moves with nav container */
+  animation: navMenuCloseButtonPreAnimation 1200ms ease-out 200ms forwards;
+}
+
+
+/* MOBILE nav buttons anims */
+
+/* when nav-menu opens */
+@keyframes navMenuCloseButtonPreAnimation{
+  0%{
+    opacity: 0;
+    transform: translate(-95vw, 6.5em) rotateY(180deg);
+  }
+  1%{
+    opacity: 0;
+    transform: translate(-95vw, 6.5em) rotateY(180deg);
+  }
+   3%{
+     opacity: 1;
+  }
+   100%{
+     opacity: 1;
+     transform: translate(1.9em, 6.5em) rotateY(180deg);  
+  }
+}
+ 
+@keyframes navMenuOpenButtonClicked {
+  to{
+    transform: translateX(-55em);
+  }
+}
+
+@keyframes navMenuOpenButtonReset{
+  0%{
+    transform: translateX(40vw);
+  }
+  1%{
+    opacity: 1;
+    transform: translatex(40vw);
+  }
+  100%{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* HERO BUTTON */
+
+/* HOVERS */
+.hero__button:hover{
+  cursor: pointer;
+  filter: drop-shadow(0 0 3px var(--clr-gold));
+  transition: filter 0ms 175ms;
+}
+
+.hero__button:hover::before{
+  animation: heroButtonBeforeOnHover 175ms linear forwards;
+}
+
+.hero__button:hover::after{
+  animation: heroButtonAfterOnHover 600ms ease-out 100ms forwards;
+}
+
+@keyframes heroButtonBeforeOnHover{
+  0%{
+    transform: scale(0, 0);
+    opacity: 0.2;
+  }
+  99%{
+    transform: scale(1.1, 1.1);
+    opacity: 0.2;
+  }
+  100%{
+    opacity: 0;
+  }
+}
+
+@keyframes heroButtonAfterOnHover{
+  0%{
+    transform: scale(0, 0);
+  }
+  100%{ 
+    transform: scale(4, 4);
+    opacity: 0;
+  }
+}
+
+
+/* CLICKED */
+
+
+.hero__button.clicked{
+  pointer-events: none;
+  filter: drop-shadow(0 0 3px var(--clr-gold));
+  animation: heroButtonClicked 1000ms linear forwards;
+}
+
+@keyframes heroButtonClicked{
+  /* from{
+    transform: translate(0, 0) rotate3d(0, 0, 0, 0deg) scale(1, 1);  
+  }
+  to{
+    transform: translate(80vw, -5em) rotate3d(-0.05, 1, 0, 80deg) scale(0, 0); 
+  }  */
+  to{transform: translateX(100vw)}
+}
+
+
+/* HERO BANNER */
+
+
+.hero__banner.running{
+  animation-play-state: running;
+}
+
+@keyframes heroBannerRotate {
+  /* translateY(0.35em)  */
+  0%, 10%{transform: rotateY(-18deg) translateY(0.35em);} 
+  21%, 35%{transform: rotateY(-110deg) translateY(0.35em);}
+  46%, 60%{transform: rotateY(-202.5deg) translateY(0.35em);}
+  71%, 85%{transform: rotateY(-292deg) translateY(0.35em);}
+  96%, 100%{transform: rotateY(-378deg) translateY(0.35em);}
+}
+
+
+
+

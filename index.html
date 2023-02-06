@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>C-Webs * Design and Development</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Handlee&family=Orbitron:wght@400;500;600;700;800;900&display=swap">
+  
+  <link rel="stylesheet" href="./css/a-hero.css">
+  <link rel="stylesheet" href="./css/hero-anims-helpers-hovers.css">
+  <link rel="stylesheet" href="./css/hero-lamp-specifics.css">
+  <link rel="stylesheet" href="./css/b-projects.css">
+  <link rel="stylesheet" href="./css/c-personalities.css">
+  <link rel="stylesheet" href="./css/personalities-anims-helpers-hovers.css">
+  <link rel="stylesheet" href="./css/d-contact-footer.css">
+  <!-- preload giant, complicated svg -->
+  <link rel="preload" href="./images/personalities-images/TARD-PALACE-MIRROR.svg" as="image">
+  <style>.personalities{background-image: url(./images/personalities-images/TARD-PALACE-MIRROR.svg);}</style>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js" integrity="sha512-gmwBmiTVER57N3jYS3LinA9eb8aHrJua5iQD7yqYCKa5x6Jjc7VDVaEA0je0Lu0bP9j7tEjV3+1qUm6loO99Kw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js" integrity="sha512-tHvUcUQYi35zApvAa5TNR3fNhBQkVtkmWKfacnpxmix4/VTGz1lGjIVyLMp7gLgAvg+aKJjnVKokXJNS5GZ+/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollToPlugin.min.js" integrity="sha512-Eenw6RBFiF4rO89LCaB5fkd4WXI4Y7GSRxrLMMWx73dZNcl+dBU3/pJtITD2gTCoEGIf/Ph3spwp0zZnF+UEJg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> <!-- 2@04Dec'22 +1@17Dec'22-->
+  <script src="./js/main-app.js" defer></script>
+</head>
+
+<body>
+  <main>
+    <div class="modal" id="modal"></div>
+    <header id="nav__header" class="nav__header">
+      <nav>
+        <a href="#"><img class="nav__logo" id="nav__logo" title="Back to Top " src="./images/hero-images/FULL-LOGO-CLIPPED-2022-06-12.svg" alt="C-WEBS logo, return to top"></a>
+        <button class="nav__menu__button nav__menu__open-button" id="nav__menu__open-button" type="button">
+          <img class="nav__menu__button__flame nav__menu__open-button__flame" src="./images/hero-images/hero-button-flame-blue.svg" alt="rocket flame">
+          <img class="nav__menu__button__rocket nav__menu__open-button__rocket" src="./images/hero-images/menu-button-rocket.svg" alt="button shaped like a rocket">
+          <span>Menu</span>
+        </button>
+        
+        <div class="nav__menu" id="nav__menu">
+          <button class="nav__menu__button nav__menu__close-button" id="nav__menu__close-button" type="button">
+            <img class="nav__menu__button__flame nav__menu__close-button__flame" src="./images/hero-images/hero-button-flame-blue.svg" alt="rocket flame" >
+            <img class="nav__menu__button__rocket nav__menu__close-button__rocket" src="./images/hero-images/menu-button-rocket.svg" alt="button shaped like a rocket">
+            <span>Close</span> 
+          </button>       
+          <ul class="nav__ul" id="nav__ul">
+            <li class="nav__li nav__li-1">
+              <a href="#" title="Back to Top">
+                <span>H</span><span>o</span><span>m</span><span>e</span>
+              </a>
+            </li>
+            <li class="nav__li nav__li-2">
+              <a href="#projects" title="View Projects Section">
+                <span>P</span><span>r</span><span>o</span><span>j</span><span>e</span><span>c</span><span>t</span><span>s</span>
+              </a>
+            </li>
+            <li class="nav__li nav__li-3">
+              <a href="#personalities" title="View About Section">
+                <span>A</span><span>b</span><span>o</span><span>u</span><span>t</span>
+              </a>
+            </li>
+            <li class="nav__li nav__li-4">
+              <a href="#contact-footer" title="Contact C-Webs">
+                <span>C</span><span>o</span><span>n</span><span>t</span><span>a</span><span>c</span><span>t</span>
+              </a>
+            </li>
+          </ul>
+        </div>   
+      </nav>
+    </header>
+
+
+    <!-- Hero -->
+
+    <section class="hero" id="hero">
+      <h2 class="section__h2 section__h2--placeholder"></h2>
+      <div class="hero__content">
+        <h1 id="hero__h1" class="hero__h1">Building Out Of This World Web Experiences</h1>
+
+        <button class="hero__button" id="hero__button" type="button" title="Go to Projects Section">
+          <img class="hero__button__flame" src="./images/hero-images/hero-button-flame-blue.svg" alt="rocket flame">
+          <img class="hero__button__rocket" src="./images/hero-images/hero-button-rocket.svg" alt="button shaped like a rocket">
+          <span><span class="hero__button__arrow">&#11177;</span>Projects</span>
+        </button>
+      </div>
+
+      <div class="hero__scene">
+        <!-- hero__banner-container only exists for the the 10 degree tilt -->
+        <div class="hero__banner-container">
+          <div class="hero__banner" id="hero__banner"></div>
+          <div class="hero__banner__logo">
+            <img src="./images/hero-images/WEB-ONLY-2022-06-12.svg" alt="Web design, Web development, Web hosting and illustrations">
+          </div>
+        </div>
+        
+        <div class="hero__walk">
+          <div class="hero__floor"></div>
+          <div class="hero__lamprow hero__lamprow-1">
+            <div class="hero__lamp hero__lamp-left">
+              <div class="hero__lamp__flame"></div>
+              <img class="hero__lamp__post" src="./images/hero-images/lamppost.svg" alt="ornate lamp post">
+            </div>
+            <div class="hero__lamp hero__lamp-right">
+              <div class="hero__lamp__flame"></div>
+              <img class="hero__lamp__post" src="./images/hero-images/lamppost.svg" alt="ornate lamp post">
+            </div>
+          </div>
+
+          <div class="hero__lamprow hero__lamprow-2">
+            <div class="hero__lamp hero__lamp-left">
+              <div class="hero__lamp__flame"></div>
+              <img class="hero__lamp__post" src="./images/hero-images/lamppost.svg" alt="ornate lamp post">
+            </div>
+            <div class="hero__lamp hero__lamp-right">
+              <div class="hero__lamp__flame"></div>
+              <img class="hero__lamp__post" src="./images/hero-images/lamppost.svg" alt="ornate lamp post">
+            </div>
+          </div>
+
+          <div class="hero__lamprow hero__lamprow-3">
+            <div class="hero__lamp hero__lamp-left">
+              <div class="hero__lamp__flame"></div>
+              <img class="hero__lamp__post" src="./images/hero-images/lamppost.svg" alt="ornate lamp post">
+            </div>
+            <div class="hero__lamp hero__lamp-right">
+              <div class="hero__lamp__flame"></div>
+              <img class="hero__lamp__post" src="./images/hero-images/lamppost.svg" alt="ornate lamp post">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+        
+
+    <!-- projects -->
+
+    <section class="projects" id="projects">
+      <div class="separator separator__hero-projects"></div>
+      <h2 class="section__h2">Projects</h2>
+
+      <!-- mobile view -->
+      <div class="projects__mobile-view">
+        <div class="projects__mobile__scene projects__mobile__scene-1">
+          <div class="projects__poster">
+            <div class="projects__poster__header projects__poster__header-1" data-observe="load">
+              <p class="small">Hosted Sites</p>
+              <p>Click below</p>
+            </div>
+            <iframe class="page-viewer" src="./Hosted/RGP-copy/rgp-copy-index.html" frameborder="0" width="0" height="0"></iframe>
+          </div>
+          <div class="separator projects-mid-separator"></div>
+        </div>
+        <div class="projects__mobile__scene projects__mobile__scene-2">
+          <div class="projects__poster">
+            <div class="projects__poster__header projects__poster__header-2" data-observe="load">
+              <p class="small">Studies</p>
+              <p>Click one</p>
+            </div>
+            <iframe class="page-viewer" src="./Studies/Ableton-copy/ableton-copy-index.html" frameborder="0" width="0" height="0"></iframe>
+            <iframe class="page-viewer" src="./Studies/Monstercat-copy/monstercat-copy-index.html" frameborder="0" width="0" height="0"></iframe>
+            <iframe class="page-viewer" src="./Studies/Monogram-copy/monogram-copy-index.html" frameborder="0" width="0" height="0"></iframe>
+          </div>
+          <div class="separator projects-mid-separator"></div>
+        </div>
+        <div class="projects__mobile__scene projects__mobile__scene-3">
+          <div class="projects__poster">
+            <div class="projects__poster__header projects__poster__header-3" data-observe="load">
+              <p class="small">Fun Animations</p>
+              <p>Click to view</p>
+            </div>
+            <iframe class="page-viewer page-viewer-3" src="./Portfolio-Animations/Water.html" frameborder="0" height="0" width="0"></iframe>
+          </div>
+        </div>
+      </div>
+      
+      <!-- tablet view --> 
+      <div class="projects__tablet-view">
+        <div class="projects__tablet__scene projects__tablet__scene-1">
+          <div class="projects__poster" id="projects__poster-t1" data-observe="load">
+            <div class="projects__poster__header projects__poster__header-1" data-observe="load">
+              <p class="small">Hosted Sites</p>
+              <p>Click below</p>
+            </div>
+            <iframe class="page-viewer" src="./Hosted/RGP-copy/rgp-copy-index.html" frameborder="0" width="0" height="0"></iframe>
+          </div>
+          <div class="projects__poster">
+            <div class="projects__poster__header projects__poster__header-2" data-observe="load">
+              <p class="small">Studies</p>
+              <p>Click one</p>
+            </div>
+            <iframe class="page-viewer" src="./Studies/Ableton-copy/ableton-copy-index.html" frameborder="0" width="0" height="0"></iframe>
+            <iframe class="page-viewer" src="./Studies/Monstercat-copy/monstercat-copy-index.html" frameborder="0" width="0" height="0"></iframe>
+            <iframe class="page-viewer" src="./Studies/Monogram-copy/monogram-copy-index.html" frameborder="0" width="0" height="0"></iframe>
+          </div>
+          <div class="separator projects-mid-separator"></div>
+        </div>
+        <div class="projects__tablet__scene projects__tablet__scene-2">
+          <div class="projects__poster">
+            <div class="projects__poster__header  projects__poster__header-3" data-observe="load">
+              <p class="small">Fun Animations</p>
+              <p>Click to view</p>
+            </div>
+            <iframe class="page-viewer page-viewer-3" src="./Portfolio-Animations/Water.html" frameborder="0" width="0" height="0"></iframe>
+          </div>
+          <div class="projects__poster projects__poster-4">
+            <div class="projects__poster__header projects__poster__header-4" data-observe="load">
+              <p>Call Today!</p>
+              <p>988.555.123</p>
+            </div>
+            <div class="projects__poster-4__body">
+              <p class="poster-4__phone-number">988.555.123</p>
+              <p>Rent</p>
+              <p>This</p>
+              <p>Space</p>
+              <p class="poster-4__phone-number">988.555.123</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- desktop view -->
+      <div class="projects__desktop-view">
+        <div class="projects__scenery">
+          <div class="projects__barrier">
+            <div class="projects__barrier__face"></div>
+            <div class="projects__barrier__angle"></div>
+            <div class="projects__barrier__foot"></div>
+            <div class="projects__barrier__joint projects__barrier__joint-1"></div>
+            <div class="projects__barrier__joint projects__barrier__joint-2"></div>
+            <div class="projects__barrier__joint projects__barrier__joint-3"></div>
+          </div>
+          <div class="projects__ground">
+            <div class="projects__pad"></div>
+          </div>        
+          <div class="projects__sidewalk">
+            <div class="projects__sidewalk__joint projects__sidewalk__joint-1"></div>
+            <div class="projects__sidewalk__joint projects__sidewalk__joint-2"></div>
+            <div class="projects__sidewalk__joint projects__sidewalk__joint-3"></div>
+            <div class="projects__sidewalk__joint projects__sidewalk__joint-4"></div>
+            <div class="projects__sidewalk__joint projects__sidewalk__joint-5"></div>
+            <div class="projects__sidewalk__joint projects__sidewalk__joint-6"></div>
+            <div class="projects__sidewalk__joint projects__sidewalk__joint-7"></div>
+          </div>
+        </div>
+        
+        <div class="projects__structure">
+          <div class="projects__facia">
+            <div class="projects__facia__board projects__facia__board--odd"></div>
+            <div class="projects__facia__board projects__facia__board--even"></div>
+            <div class="projects__facia__board projects__facia__board--odd"></div>
+          </div>
+          <div class="projects__ceiling">
+            <div class="projects__ceiling__panel projects__ceiling--odd"></div>
+            <div class="projects__ceiling__panel projects__ceiling--even"></div>
+            <div class="projects__ceiling__panel projects__ceiling--odd"></div>
+          </div>
+
+          <!-- walls -->
+          <div class="projects__wall">
+            <div class="projects__wall__post"></div>
+            <div class="projects__wall__panel">
+              <div class="projects__poster">
+                <div class="projects__poster__header projects__poster__header-1" data-observe="load">
+                  <p class="small">Hosted Sites</p>
+                  <p>Click below</p>
+                </div>
+                <iframe class="page-viewer" src="./Hosted/RGP-copy/rgp-copy-index.html" frameborder="0" width="0" height="0"></iframe>
+              </div>
+            </div>
+            <div class="projects__wall__post projects__wall__post--tall"></div> 
+            <div class="projects__wall__panel">
+              <div class="projects__poster">
+                <div class="projects__poster__header projects__poster__header-2" data-observe="load">
+                  <p class="small">Studies</p>
+                  <p>Click one</p>
+                </div>
+                <iframe class="page-viewer" src="./Studies/Ableton-copy/ableton-copy-index.html" frameborder="0" width="0" height="0"></iframe>
+                <iframe class="page-viewer" src="./Studies/Monstercat-copy/monstercat-copy-index.html" frameborder="0" width="0" height="0"></iframe>
+                <iframe class="page-viewer" src="./Studies/Monogram-copy/monogram-copy-index.html" frameborder="0" width="0" height="0"></iframe>
+              </div>
+            </div>
+            <div class="projects__wall__post"></div> 
+            <div class="projects__wall__panel">
+              <div class="projects__poster" id="projects__poster-d3" data-observe="load">
+                <div class="projects__poster__header projects__poster__header-3" data-observe="load">
+                  <p class="small">Fun Animations</p>
+                  <p>Click to view</p>
+                </div>
+                <iframe class="page-viewer page-viewer-3" src="./Portfolio-Animations/Water.html" frameborder="0" width="0" height="0"></iframe>
+              </div>
+            </div>
+            <div class="projects__wall__post projects__wall__post--tall"></div>
+          </div>
+          
+          <div class="projects__trash">
+            <div class="projects__trash__can"></div>
+            <div class="projects__trash__can__ridge-1"></div>
+            <div class="projects__trash__can__ridge-2"></div>
+            <div class="projects__trash__can__top"></div>
+          </div>
+          <img class="projects__bus projects__bus-sign" src="./images/projects-images/bus-sign.svg" alt="bus stop sign">
+          <img class="projects__bus projects__bus-dude" src="./images/projects-images/bus-stop-dude.svg" alt="dude waiting for a bus">
+          <img class="projects__bus projects__bus-babe" src="./images/projects-images/bus-stop-babe.svg" alt="dudette waiting for a bus">
+        </div>     
+      </div>
+      
+      <div class="separator separator__projects-personalities"></div>
+    </section>
+
+
+    <!-- persomalities -->
+
+    <section class="personalities" id="personalities">
+      <h2 class="section__h2">Personalities</h2>
+
+      <div class="personalities__grid-container">
+        <div class="personalities__tard personalities__tard-1" data-observe="load" title="The Horn Player">
+          <img class="personalities__horn-player__bottom special-tard-d-shadow" src="./images/personalities-images/m-HORN-PLAYER-bottom.svg" alt="horn player in 3 movements">
+          <img class="personalities__horn-player__head tard--drop-shadow" id="personalities__horn-player__head" src="./images/personalities-images/m-HORN-PLAYER-head.svg" alt="horn player in 3 movements">
+          <img class="personalities__horn-player__middle special-tard-d-shadow" id="personalities__horn-player__middle" src="./images/personalities-images/m-HORN-PLAYER-middle.svg" alt="horn player in 3 movements">
+          <img class="personalities__hoverer tard--drop-shadow" src="./images/personalities-images/hoverer.svg" alt="hoverer">
+          <img class="personalities__hoverer__flame" src="./images/personalities-images/hoverer-flame.svg" alt="hoverer flame">
+        </div>
+  
+        <div class="personalities__staff personalities__staff-1" title="The Designer">
+          <div class="personalities__staff-container">
+            <img class="personalities__portrait personalities__portrait-1" data-observe="load" src="./images/personalities-images/p-VANGIE.svg" alt="portrait of Dee Zeinwiz">
+            <img class="personalities__frame" src="./images/personalities-images/frame-vangie.svg" alt="ornate picture frame">
+            <div class="personalities__scroll">
+              <img class="personalities__scroll__img" src="./images/personalities-images/scroll.svg" alt="ancient scroll">
+              <div class="personalities__scroll__copy">
+                <h4>Dee Zeinwiz</h4>
+                <p>Artistically acclaimed<br>from the age of five</p>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <div class="personalities__tard personalities__tard-2" data-observe="load" title="Tenner">
+          <img class="personalities__big-clare__bottom special-tard-d-shadow" src="./images/personalities-images/m-BIG-CLARE-bottom.svg" alt="Big Clare, musician, in 2 movements">
+          <img class="personalities__big-clare__top tard--drop-shadow" id="personalities__big-clare__top" src="./images/personalities-images/m-BIG-CLARE-top.svg" alt="Big Clare, musician, in 2 movements">
+          <img class="personalities__hoverer tard--drop-shadow" src="./images/personalities-images/hoverer.svg" alt="hoverer">
+          <img class="personalities__hoverer__flame" src="./images/personalities-images/hoverer-flame.svg" alt="hoverer flame">
+        </div>
+  
+        <div class="personalities__staff personalities__staff-2" title="The Developer">
+          <div class="personalities__staff-container">
+            <img class="personalities__portrait personalities__portrait-2" data-observe="load" src="./images/personalities-images/p-MONA.svg" alt="portrait of Paige Builder">
+            <img class="personalities__frame" src="./images/personalities-images/frame-mona.svg" alt="ornate picture frame">
+            <div class="personalities__scroll">
+              <img class="personalities__scroll__img" src="./images/personalities-images/scroll.svg" alt="ancient scroll">
+              <div class="personalities__scroll__copy">
+                <h4>Paige Builder</h4>
+                <p>Creating state of the<br>art sites since 1999</p>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <div class="personalities__tard personalities__tard-3" data-observe="load" title="Regular Clare">
+          <img class="personalities__reg-clare__all tard--drop-shadow" id="personalities__reg-clare__all" src="./images/personalities-images/m-REG-CLARE.svg" alt="Reguler Clare, musician, complete">
+          <img class="personalities__hoverer tard--drop-shadow" src="./images/personalities-images/hoverer.svg" alt="hoverer">
+          <img class="personalities__hoverer__flame" src="./images/personalities-images/hoverer-flame.svg" alt="hoverer flame">
+        </div>
+
+        <div class="personalities__staff personalities__staff-3" title="The Geek">
+          <div class="personalities__staff-container">
+            <img class="personalities__portrait personalities__portrait-3" data-observe="load" src="./images/personalities-images/p-ALBIE.svg" alt="portrait of 'Data' Gene Yuss">
+            <img class="personalities__frame" src="./images/personalities-images/frame-albie.svg" alt="ornate picture frame">
+            <div class="personalities__scroll">
+              <img class="personalities__scroll__img" src="./images/personalities-images/scroll.svg" alt="ancient scroll">
+              <div class="personalities__scroll__copy">
+                <h4>'Data' Gene Yuss</h4>
+                <p>Wondering if you want<br>to develop an app</p>
+              </div>
+            </div>
+          </div>
+        </div>
+    
+        <div class="personalities__tard personalities__tard-4" data-observe="load" title="Barri Tone">
+          <img class="personalities__barritone__all tard--drop-shadow" id="personalities__barritone__all" src="./images/personalities-images/m-BARRITONE-PLAYER.svg" alt="Barri Tone, musician, complete">
+          <img class="personalities__hoverer tard--drop-shadow" src="./images/personalities-images/hoverer.svg" alt="hoverer">
+          <img class="personalities__hoverer__flame" src="./images/personalities-images/hoverer-flame.svg" alt="hoverer flame">
+        </div>
+
+        <div class="personalities__staff personalities__staff-4" title="Our Dear Leader">
+          <div class="personalities__staff-container">
+            <img class="personalities__portrait personalities__portrait-4" data-observe="load" src="./images/personalities-images/p-MR-C.svg" alt="portrait of Mr C">
+            <img class="personalities__frame" src="./images/personalities-images/frame-mr-c.svg" alt="ornate picture frame">
+            <div class="personalities__scroll">
+              <img class="personalities__scroll__img" src="./images/personalities-images/scroll.svg" alt="ancient scroll">
+              <div class="personalities__scroll__copy">
+                <h4>Mr. C.</h4>
+                <p>Our Dear Leader.<br>A Very Stable Genius</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="personalities__tard personalities__tard-5" title="CA7OPL (pronounced 'Cu-se-ven-o-pul')">
+          <img class="personalities__programmer__gear" src="./images/personalities-images/programmer-gear.svg" alt="3 monitors and keyboards">
+          <img class="personalities__programmer__head tard--drop-shadow" id="personalities__programmer__head" src="./images/personalities-images/programmer-head.svg" alt="The Programmer in 2 parts">
+          <img class="personalities__programmer__body special-tard-d-shadow" src="./images/personalities-images/programmer-body.svg" alt="The Programmer in 2 parts">
+        </div>
+      </div>
+    </section>
+    
+
+    <!-- contact / footer -->
+    
+    <section class="contact-footer" id="contact-footer">
+      <div class="contact__modal" id="contact__modal"></div>
+      <div class="separator separator-personalities-contact"></div>
+      <h2 class="section__h2 section__h2--placeholder"></h2>
+      <div class="contact" id="contact">
+        <div class="contact__header">
+          <h3>
+            Contact <img class="contact__h3__logo" src="./images/hero-images/FULL-LOGO-CLIPPED-2022-06-12.svg" alt="C-WEBS LOGO, return to top"> Today!
+          </h3>
+          <p>Prices starting as low as $20</p>
+          <p>Free Consultations</p>
+        </div>
+        <form class="contact__form" id="contact__form" action="result.html" method="GET" novalidate>
+          
+          <div id="contact__errors">
+            <p id="contact__errors__err-msg"></p>
+            <img src="./images/contact-images/tard-spokesperson.svg" alt="The Error Handler">
+          </div>
+          
+          <div class="contact__input">
+            <input required type="text" class="contact__input-field contact__name-field" id="contact__name-field" pattern="^[\w]+[\w.',-]*" placeholder="Please enter your name">
+            <label for="contact__name-field" class="contact__name__label">Name</label>
+          </div>
+          
+          <div class="contact__input">
+            <input type="text" class="contact__input-field contact__company-name-field" id="contact__company-name-field" placeholder="Feel free to enter the name of your organization">
+            <label for="contact__company-name-field" class="contact__company-name__label">Organization &nbsp; 
+              <span class="contact__company-name-optional"> (optional)</span></label>
+          </div>
+         
+          <div class="contact__input">
+            <input required type="email" class="contact__input-field contact__email-field" id="contact__email-field" pattern="[\w._+-]+@[\w. -]+\.[\w]{2,}" placeholder="Please enter your email address">
+            <label for="contact__email-field" class="contact__email__label">Email</label>
+          </div>
+         
+          <div class="contact__input">
+            <textarea required class="contact__input-field contact__message-field" id="contact__message-field" cols="30" rows="4" placeholder="Please tell us how we can be of service"></textarea>
+            <label for="contact__message-field" class="contact__message__label">Message</label>
+          </div>
+
+          <button class="contact__submit-button" id="contact__submit-button" type="submit" form="contact__form">
+            <img class="contact__button__rocket" src="./images/hero-images/menu-button-rocket.svg" alt="button shaped like a rocket">
+            <span>Submit</span>
+          </button>
+        </form>
+          
+        <div class="contact__thank-you" id="contact__thank-you">
+          <h4>Thank You</h3>
+          <h5>Your message is on its way. You can expect a reply very soon...</h5>
+          <p><span class="contact__t-y__moons">&#9790;</span>...unless we're asleep<span class="contact__t-y__moons">&#9789;</span></p>
+          <img src="./images/contact-images/sleepy-face.svg" alt="cute sleeping face">
+          <button type="button" id="contact__thank-you-button">OK</button>
+        </div>
+      </div>
+          
+      <footer>
+        <p>
+          &copy;2022 <a title="Back to Top" href="#"><img class="footer__logo" src="./images/hero-images/FULL-LOGO-CLIPPED-2022-06-12.svg" alt="C-WEBS LOGO, return to top"></a>
+        </p>
+        <p>
+          Except starfield.webp background image, which is<br>based on <a target="_blank" title="twinkle stars png 1" href="https://pngimage.net/twinkle-stars-png-1/">twinkle-stars-png-1</a> from <a href="https://pngimage.net/" target="_blank" title="pngimage.net">pngimage.net.</a>
+        </p>
+        <p><a href="#" title="Back to Top">Back to Top</a></p>
+      </footer>
+    </section>
+  </main>
+</body>
+
+</html>

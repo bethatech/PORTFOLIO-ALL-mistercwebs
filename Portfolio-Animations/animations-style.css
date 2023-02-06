@@ -1,0 +1,407 @@
+:root{
+  --padding: 8vw; /* used by header and .candles*/
+  --titles-ht: calc(2vmax + 1.7rem);
+
+  /* candles */
+  --clr-lightyellow: lightyellow;
+  --clr-gold: gold;  /* also used for logo, home link and titles */
+  --clr-orange: orange;
+  --clr-orangered: orangered;
+  --clr-darkblue: darkblue;
+  --clr-black: black;
+
+  /* COINS */
+
+  --coin-size: calc(14vmax + 1rem);
+  /* portrait */
+  --mobile-top-increment: 21.5vh;
+  --mobile-top-gold: 17vh;
+  --mobile-top-silver: calc(var(--mobile-top-gold) + var(--mobile-top-increment));
+  --mobile-top-bronze: calc(var(--mobile-top-gold) + (var(--mobile-top-increment) * 2));
+  --mobile-top-titanium: calc(var(--mobile-top-gold) + (var(--mobile-top-increment) * 3));
+  --mobile-left: calc(50vw - (var(--coin-size) / 2));
+  /* landscape */
+  --desktop-top: 35vh;
+  --desktop-left-increment: 22.2vw;
+  --desktop-left-gold: 8vw;
+  --desktop-left-silver: calc(var(--desktop-left-gold) + var(--desktop-left-increment));
+  --desktop-left-bronze: calc(var(--desktop-left-gold) + (var(--desktop-left-increment) * 2));
+  --desktop-left-titanium: 32.5vw;  /* to account for titanium-wrapper */
+}
+
+*, *::before, *::after{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  overflow: hidden;
+}
+
+main{
+  background-color: var(--clr-black);
+  background-image: url(./animations-images/TILED-LOGO-BG-VERT-2022-06-18.svg);
+  background-size: 25vmax;
+  height: 100vh; 
+  font-family: 'Handlee', sans-serif;
+  color: var(--clr-gold);
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll; /* req'd for scroll-snap*/
+}
+
+header{
+  position: fixed;
+  top: 0;
+  width: 98.5%; /* why..? IDK! */
+  z-index: 5;
+}
+
+#animations__close-button{
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: max(2.5vmax, 1rem) var(--padding);
+  width: 100%;
+  font-family: inherit;
+  font-size: calc(0.3vmax + 1.25rem);
+  text-decoration: none;
+  color: inherit;
+  border: none;
+  cursor: pointer;
+}
+
+.nav__logo{
+  width: calc(4vmax + 3.5rem);
+}
+
+.section__titles{
+  position: absolute;
+  top: calc(7vmax + 1rem);
+  left: 50%;
+  width: max-content;
+  transform: translateX(-50%);
+  overflow: hidden;
+}
+
+.title{
+  top: 1em;
+  font-size: calc(2vmax + 1rem);
+  text-align: center;
+  opacity: 0;
+  z-index: 5;
+  transition: transform 300ms, opacity 300ms;
+}
+
+.title__water{
+  opacity: 1;
+}
+
+.more-indicator{
+  position: absolute;
+  bottom: 3vmax;
+  left: 50%;
+  font-size: calc(0.3vmax + 1rem);
+  font-family: serif;
+  transform: translateX(-50%);
+  z-index: 5;
+}
+
+.more-indicator span{
+  font-style: italic;
+}
+
+section{
+  background-color: transparent;
+  position: relative;
+  padding: 0 var(--padding);
+  width: 100%;
+  height: 100vh;
+  scroll-snap-align: start;
+  overflow: hidden;
+}
+
+
+/* WATER */
+
+.water h3{
+  position: relative;
+  top: 50%;
+  font-size: 26vw; /* <-- MAGIC NUMBER */
+  font-family: 'Poppins', sans-serif;
+  -webkit-text-stroke: 2px hsl(188, 100%, 60%);
+  color: transparent;
+  transform: translateY(-50%);
+}
+
+.water h3::after{
+  content: 'Water';
+  position: absolute;
+  left: 0;
+  color: hsl(188, 100%, 60%);
+  clip-path: url(#water__svg__clip-path); /* another part of the only way I could get this to work */
+}
+
+#water__svg{
+  /* had to do this to keep it from taking up space in the grid */
+  position: absolute;
+  width: 0;
+}
+
+#water__clip-path__path{
+  /* dunno why this had to be set here, but it wouldn't work any other way
+  It is the exact path from Mask1.svg. @keyframes make-waves = Mask2.svg */
+  d: path("M0.846924 207.5V-6.10352e-05M0.846924 207.5V399.5H813.847V207.5C674.949 224.373 546.245 224.373 407.347 207.5C268.449 190.627 139.745 190.627 0.846924 207.5ZM813.847 207.507V-6.10352e-05");
+  animation: make-waves 3s ease-in-out infinite alternate;
+}
+
+
+/* CANDLES */
+
+.candles{
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.90vh;
+}
+
+.candles__candle-wrapper{
+  margin-top: 30em;
+}
+
+.candles__wrappers-2-and-6{
+  transform: scale(0.82, 0.82);
+}
+
+.candles__wrappers-3-and-5{
+  transform: scale(0.72, 0.72);
+}
+
+.candles__wrapper-4{
+  transform: scale(0.69);
+}
+
+.candles__flame-wrapper{
+  position: relative;
+  display: grid;
+  justify-items: center;
+  transition: transform 50ms ease;
+}
+
+.candles__flame{
+  position: absolute;
+  bottom: 0.7em;
+  border-top-right-radius: 50% 75%;
+  border-top-left-radius: 50% 75%;
+  border-bottom-right-radius: 50% 25%;
+  border-bottom-left-radius: 50% 25%;
+}
+
+.candles__flame__white{
+  background-color: var(--clr-lightyellow);
+  width: 1.7em;
+  height: 7.5em;
+  box-shadow: 0 -0.5em 0.4em 0.1em var(--clr-lightyellow), 0 -0.7em 0.4em 0.2em var(--clr-orange);
+}
+
+.candles__flame__yellow{
+  background-color: var(--clr-gold);
+  width: 1em;
+  height: 1.4em;
+  box-shadow: 0 -0.9em 0.7em 0.35em var(--clr-gold);
+}
+
+.candles__flame__orange{
+  background-color: var(--clr-orange);
+  width: 1em;
+  height: 1.3em;
+  box-shadow: 0 -0.4em 0.6em 0.3em var(--clr-orange);
+}
+
+.candles__flame__red{
+  background-color: var(--clr-orangered) ;
+  width: 1.25em;
+  height: 1em;
+  box-shadow: 0 -0.2em 0.5em 0.25em var(--clr-orangered);
+}
+
+.candles__base{
+  position: absolute;
+  bottom: 0.5em;
+  border-radius: 50%;
+}
+
+.candles__base__blue{
+  background-color: var(--clr-darkblue);
+  bottom: 0.7em;
+  width: 0.7em;
+  height: 0.5em;
+  box-shadow: 0.2em -0.1em 0.4em 0.5em var(--clr-darkblue), -0.2em -0.1em 0.4em 0.5em var(--clr-darkblue);
+}
+
+.candles__base__black{
+  background-color: var(--clr-black);
+  width: 0.5em;
+  height: 0.25em;
+  box-shadow: 0 0 0.25em 0.1em var(--clr-black);
+}
+
+.candles__candlestick{
+  background-image: linear-gradient(to right, hsl(20, 50%, 87%) 34%, hsl(60, 100%, 94%) 61%, hsl(20, 50%, 90%));
+  width: 5.5em;
+  height: 75em;
+  border-top-right-radius: 40%;
+  border-top-left-radius: 40%;
+  border-bottom-right-radius: 50% .8em;
+  border-bottom-left-radius: 50% .8em;
+  box-shadow: inset 0.5em 0 1em hsl(20, 20%, 60%)
+}
+
+
+/* COINS */
+
+.coins{
+  font-size: var(--coin-size);
+  overflow: hidden;
+}
+
+.coins__coin{
+  position: absolute;
+  top: 0;
+  left: var(--mobile-left);
+  width: var(--coin-size);
+  height: var(--coin-size);
+  clip-path: polygon(27.75% 0.75%, 29.5% 0%, 70.5% 0%, 72.25% 0.75%, 99.25% 27.75%, 100% 29.5%, 100% 70.5%, 99.25% 72.25%, 72.25% 99.25%, 70.5% 100%, 29.5% 100%, 27.75% 99.25%, 0.75% 72.25%, 0% 70.5%, 0% 29.5%, 0.75% 27.75%);
+}
+
+.coins__coin::after{
+  content: '';
+  background-image: url(./animations-images/ROUND-LOGO-2022-06-18-BLACK.svg);
+  background-color: hsla(0, 0%, 0%, 0.5);
+  position: absolute;
+  inset: 0.015em;
+  clip-path: polygon(27.75% 0.75%, 29.5% 0%, 70.5% 0%, 72.25% 0.75%, 99.25% 27.75%, 100% 29.5%, 100% 70.5%, 99.25% 72.25%, 72.25% 99.25%, 70.5% 100%, 29.5% 100%, 27.75% 99.25%, 0.75% 72.25%, 0% 70.5%, 0% 29.5%, 0.75% 27.75%);
+  opacity: 0.3;
+}
+
+
+/* COINS PORTRAIT LAYOUT */
+.coin__gold{
+  background-image: conic-gradient(#edc800, #e6b800, #f3cf00, #ffe800,
+                              #edc800, #e3b600, #f3cf00, #ffe800,
+                              #edc800, #e3b600, #f3cf00, #ffe800,
+                              #edc800, #e3b600, #f3cf00, #ffe800);
+  top: var(--mobile-top-gold);
+}
+
+.coin__silver{
+  background-image: conic-gradient(#d7d7d7, #c3c3c3, #cccccc, #c6c6c6,
+                              #d7d7d7, #c3c3c3, #cccccc, #c6c6c6,
+                              #d7d7d7, #c3c3c3, #cccccc, #c6c6c6,
+                              #d7d7d7, #c3c3c3, #cccccc, #c6c6c6);
+  top: var(--mobile-top-silver);
+}
+
+.coin__bronze{
+  background-image: conic-gradient(#d95641, #b14439, #b2453a, #d25645,
+                              #d95641, #b14439, #b2453a, #d25645,
+                              #d95641, #b14439, #b2453a, #d25645,
+                              #d95641, #b14439, #b2453a, #d25645);
+  top: var(--mobile-top-bronze);
+}
+
+.coins__titanium-wrapper{
+  position: absolute;
+  display: grid;
+  place-items: center;
+  width: 100vw;
+  top: var(--mobile-top-titanium);
+  left: 0;
+}
+
+.coin__titanium{
+  background-image: conic-gradient(#e6e9bf, #d2b5aa, #cbaea3, #d4b5ab,
+                                  #e6e9bf, #d2b5aa, #cbaea3, #d4b5ab,
+                                  #e6e9bf, #d2b5aa, #cbaea3, #d4b5ab,
+                                  #e6e9bf, #d2b5aa, #cbaea3, #d4b5ab);
+  position: relative;
+  left: 0; /* to override .coin */
+}
+
+
+/* COINS PORTRAIT HELPERS -----------------------------------------------*/
+
+.coin__gold.play-mobile{
+  animation: anim-gold-mobile 1.6s linear 0.5s;
+}
+
+.coin__silver.play-mobile{
+  animation: anim-silver-mobile 2.5s linear 2.4s;
+}
+
+.coin__bronze.play-mobile{
+  animation: anim-bronze-mobile 2.75s ease-in 7.7s;
+}
+
+.coins__titanium-wrapper.play-mobile{
+  animation: anim-titanium-wrapper-mobile 0.3s ease-out 5.25s alternate;
+  animation-iteration-count: 6;
+}
+
+.coin__titanium.play-mobile{
+  animation: anim-titanium-coin-mobile 2.4s linear 5.25s;
+}
+
+
+/* COINS LANDSCAPE LAYOUT */
+
+@media screen and (min-width: 512px) and (orientation: landscape){
+  .coins__coin{
+    top: var(--desktop-top);
+  }
+
+  .coin__gold{
+    left: var(--desktop-left-gold);
+  }
+
+  .coin__silver{
+    left: var(--desktop-left-silver);
+  }
+
+  .coin__bronze{
+    left: var(--desktop-left-bronze);
+  }
+
+  .coins__titanium-wrapper{
+    top: var(--desktop-top);
+  }
+
+  .coin__titanium{
+    top: 0;
+    left: var(--desktop-left-titanium);
+  }
+
+
+/* COINS LANDSCAPE HELPERS ----------------------------------------*/
+  .coin__gold.play-desktop{
+    animation: anim-gold-desktop 1.6s linear 0.5s;
+  }
+
+  .coin__silver.play-desktop{
+    animation: anim-silver-desktop 2.5s linear 2.52s;
+  }
+
+  .coin__bronze.play-desktop{
+    animation: anim-bronze-mobile 2.75s ease-in;
+    animation-delay: 7.9s;
+  }
+  
+  .coins__titanium-wrapper.play-desktop{
+    animation: anim-titanium-wrapper-desktop 1.75s ease-out 5.4s alternate;
+    animation-iteration-count: 1;
+  }
+
+  .coin__titanium.play-desktop{
+    animation: anim-titanium-coin-desktop 2s linear 5.5s;
+  }
+}

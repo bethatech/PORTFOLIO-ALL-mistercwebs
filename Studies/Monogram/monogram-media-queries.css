@@ -1,0 +1,417 @@
+
+/* media query 36em 576px ===================================================*/
+@media screen and (min-width: 36em){
+  nav{
+    --nav-margin: 1em;
+  }
+
+
+ /* shopping cart section ---------------------------------------------------*/
+  .shopping-cart__header{
+    padding: 1.2em var(--padding-x-small);
+  }
+
+  .shopping-cart__main{
+    padding: 2.7em var(--padding-x-small);
+  }
+
+  .shopping-cart__main h3{
+    margin-top: 1em;
+    font-size: var(--size-x-lg);
+  }
+
+  .shopping-cart__main p{
+    font-size: var(--size-x-sm);
+  }
+
+  .shopping-cart__footer{
+    padding-top: 1.8em;
+  }
+
+  .shopping-cart__footer p{
+    font-size: var(--size-x-sm);
+  }
+
+  .shopping-cart__footer button{
+    padding: 0.6em;
+    margin-top: 1.6em;
+  }
+
+
+  /* hero section -----------------------------------------------------------*/
+  .hero{
+    align-items: center;
+    padding: 16.83em 0 0.5em;
+  }
+
+  .hero__outer-wrapper{
+    width: 32em;
+  }
+
+  .hero__wrapper{
+    max-width: 24em;
+  }
+  
+  /* h1 also used by create section */
+   h1{
+    padding-bottom: 0.36em;
+    font-size: var(--size-h1-lg);
+    line-height: var(--height-h1-lg);
+  }
+
+  .hero p{
+    font-size: var(--size-x-lg);
+  }
+
+  .hero__down-chevron img{
+    margin-top: 2.7em;
+    margin-bottom: 2.7em;
+  }
+
+
+  /* products section (three and five) --------------------------------------*/
+  .product{
+    margin: 0 auto 0.1em;
+    width: 31.2em;
+  }
+
+  .product h3{
+    font-size: var(--size-x-lg);
+  }
+ 
+  .product > p{
+    padding-top: 0.3em;
+  }
+
+  .five-products,
+  .five-products .product{
+    margin-bottom: 0.25em;
+  }
+
+  
+  /* create section ---------------------------------------------------------*/
+  .create{
+    padding-top: 2.8em;
+    height: 21.1em;
+  }
+
+  .create p{
+    font-size: var(--size-x-lg);
+  }
+
+  
+  /* footer section ---------------------------------------------------------*/
+  footer{
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 1.9em var(--padding-med) 6em;
+  }
+
+  .footer__subscribe-n-social{
+    grid-column: 2 / -1;
+    margin-top: 0;
+    max-width: 27em;
+  }
+
+  footer input{
+    padding: 0.3em 0.5em;
+  }
+ 
+  .footer__subscribe p,
+  .footer__address p,
+  .footer__social-links{
+    padding-top: 0.25em;
+  }
+ 
+  footer li{
+    padding-top: 0.1em;
+  }
+  
+  .footer__social-links img{
+    width: 1.75rem;
+  }
+
+  .footer__address{
+    grid-column-start: 1;
+    grid-row: 1 / 3;
+  }
+ 
+  .footer__quick-links{
+    grid-column: 1 / 3;
+    grid-row-start: 3;
+  }
+ 
+  .footer__help{
+    grid-column-start: 2;
+    grid-row-start: 3;
+  }
+ 
+  .footer__info{
+    grid-column-start: 3;
+    grid-row-start: 3;
+  }
+ 
+  .footer__final{
+    grid-column: 2 / span 2;
+    grid-row-start: 2;
+    margin: 0 0 0.5em;
+  }
+}
+ 
+
+/* media query 48em 768px ===================================================*/
+@media screen and (min-width: 48em){
+  .hero{
+    background-image: url(./monogram-images/hero-bg-med.webp);
+    padding-top: 16.9em;
+    padding-bottom: 0;
+  }
+
+  .hero__outer-wrapper{
+    width: 42em;
+  }
+
+  .hero__wrapper{
+    padding-bottom: 5.5em;
+    max-width: 22rem;
+  }
+
+  .hero__down-chevron img{
+    margin-top: 2.9em;
+    margin-bottom: 2.6em;
+    width: 2.4rem;
+  }
+
+
+  /* three products section AND five products section -----------------------*/
+  .three-products,
+  .five-products{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 0.9em;
+    row-gap: 1.3em;
+    padding: 2.75em 0;
+    margin: 0 auto;
+    width: 42.5em;
+  }
+
+  .five-products{
+    padding-bottom: 4em;
+  }
+
+  .product{
+    padding-bottom: 0;
+    width: auto;
+  }
+
+  .product p,
+  .product h3{
+    max-width: 70%;
+  }
+
+  .product__special--wide{
+    grid-column: span 2;
+    margin: 0;
+  }
+
+  .product__special--wide img{
+    height: 17em;
+    object-fit: cover;
+  }
+
+  .five-products img{
+    height: 20.7em;
+  } 
+
+  
+  /* create section ---------------------------------------------------------*/
+  .create{
+    background-size: 115%;
+    height: 31.7em;
+    overflow: hidden;
+  }
+
+  .create__wrapper{
+    max-width: 100%;
+    /* padding-top: 0.21em; */
+  }
+  
+
+  /* five products section styled with three products section, above --------*/
+
+
+  /* footer section ---------------------------------------------------------*/
+  footer{
+    padding: 1.8em 2.9em 5.5em;
+  }
+}
+
+
+/* media query 62em 992px ===================================================*/
+@media screen and (min-width: 62em){
+  .nav__links{
+    position: static;
+    display: flex;
+    align-items: center;
+    height: auto;
+    overflow: visible;
+  }
+
+  .nav__links a,
+  .nav-toggle-submenu-button{
+    font-size: var(--size-sm);
+  }
+
+  .nav__links > li{
+    padding: 0 1.1em;
+  }
+
+  .nav__link--position-relative{
+    position: relative;  /* to avoid positioning glitch*/
+  }
+
+  .nav__links__submenu{
+    position: absolute;
+    padding-right: var(--padding-small);
+    top: 2rem;
+    width: max-content;
+    box-shadow: 0 0 40px #999;
+  }
+
+  .nav__links__submenu a{
+    font-size: var(--size-med);
+  }
+
+  .nav__burger-icon{
+    display: none;
+  }
+
+
+  /* hero section -----------------------------------------------------------*/
+  .hero{
+    padding-top: 19.2em;
+  }
+
+  .hero__outer-wrapper{
+    width: 52.5em;
+  }
+
+  .hero__wrapper{
+    padding-bottom: 8em;
+    max-width: 27em;
+  }
+
+  .hero h1{
+    max-width: 11em;
+  }
+
+
+  /* three products section AND five products section -----------------------*/
+  .three-products,
+  .five-products{
+    column-gap: var(--padding-med);
+    width: 57.5em;
+  }
+  
+  .three-products{
+    row-gap: 1.2em;    
+    padding-bottom: 2.3em;
+  }
+
+  .five-products{
+    row-gap: 1.3em;
+  }
+
+  .product{
+    width: 100%;
+  }
+
+  .product p{
+    max-width: 100%;
+  }
+
+  .product__special--wide img{
+    height: 23em;
+  }
+
+  .five-products img{
+    height: 27.4em;
+  }
+
+  /* create section ---------------------------------------------------------*/
+  .create p{
+    font-size: var(--size-x-lg);
+  }
+
+
+  /* five products section styled with three products section, above---------*/
+  
+ 
+  /* footer section ---------------------------------------------------------*/
+  footer{
+    grid-template-columns: 1fr 1fr 1fr 1fr 2fr;
+    column-gap: 0em;
+  }
+
+  .footer__subscribe-n-social{
+    grid-row-start: 1;
+    grid-column-start: 5;
+  }
+
+  .footer__address{
+    grid-row-start: 1;
+    grid-column-start: 1;
+  }
+
+  .footer__quick-links{
+    grid-row-start: 1;
+    grid-column-start: 2;
+  }
+
+  .footer__help{
+    grid-row-start: 1;
+    grid-column-start: 3;
+  }
+
+  .footer__info{
+    grid-row-start: 1;
+    grid-column-start: 4;
+  }
+
+  .footer__final{
+    grid-row-start: 2;
+    grid-column-start: 5;
+  }
+}
+
+
+/* media query 75em 1200px ==================================================*/
+@media screen and (min-width: 75em){
+  .hero{
+    background-image: url(./monogram-images/hero-bg.webp);
+  }
+
+  .hero__outer-wrapper{
+    width: 65em;
+  }
+
+  .three-products,
+  .five-products{
+    width: 68.5em;
+  }
+
+  .product__special--wide img{
+    height: 27.5em;
+  }
+
+  .five-products{
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  
+  .five-products img{
+    height: 21em;
+  }
+
+  footer{
+    padding: 1.8em 4em 5.5em;
+  }
+}
