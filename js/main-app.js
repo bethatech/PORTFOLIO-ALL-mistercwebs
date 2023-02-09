@@ -238,7 +238,7 @@
   const createRevealer = element => {
     ScrollTrigger.create({
       trigger: element,
-      start: 'top bottom-=25%',
+      start: 'top bottom-=40%',
       toggleClass: 'loading-anim',
       once: true,
     });

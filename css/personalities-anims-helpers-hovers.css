@@ -141,15 +141,15 @@
   }
   
   .personalities__portrait-2.loading-anim{
-    animation-delay: 250ms;
+    animation-delay: 300ms;
   }
 
   .personalities__portrait-3.loading-anim{
-    animation-delay: 450ms;
+    animation-delay: 550ms;
   }
 
   .personalities__portrait-4.loading-anim{
-    animation-delay: 650ms;
+    animation-delay: 800ms;
   }
 }
 
