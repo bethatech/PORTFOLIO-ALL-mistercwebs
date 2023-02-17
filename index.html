@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>C-Webs * Design and Development</title>
-
+  <!-- <link rel="icon" type="image/svg+xml" href="./**path**/favicon.ico"/> -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Handlee&family=Orbitron:wght@400;500;600;700;800;900&display=swap">
@@ -149,7 +149,7 @@
               <p class="small">Hosted Sites</p>
               <p>Click below</p>
             </div>
-            <iframe class="page-viewer" src="./Hosted/RGP-copy/rgp-copy-index.html" frameborder="0" width="0" height="0"></iframe>
+            <iframe class="page-viewer" src="./RGP/rgp-index.html" frameborder="0" width="0" height="0"></iframe>
           </div>
           <div class="separator projects-mid-separator"></div>
         </div>
@@ -184,7 +184,7 @@
               <p class="small">Hosted Sites</p>
               <p>Click below</p>
             </div>
-            <iframe class="page-viewer" src="./Hosted/RGP-copy/rgp-copy-index.html" frameborder="0" width="0" height="0"></iframe>
+            <iframe class="page-viewer" src="./RGP/rgp-index.html" frameborder="0" width="0" height="0"></iframe>
           </div>
           <div class="projects__poster">
             <div class="projects__poster__header projects__poster__header-2" data-observe="load">
@@ -267,7 +267,7 @@
                   <p class="small">Hosted Sites</p>
                   <p>Click below</p>
                 </div>
-                <iframe class="page-viewer" src="./Hosted/RGP-copy/rgp-copy-index.html" frameborder="0" width="0" height="0"></iframe>
+                <iframe class="page-viewer" src="./RGP/rgp-index.html" frameborder="0" width="0" height="0"></iframe>
               </div>
             </div>
             <div class="projects__wall__post projects__wall__post--tall"></div> 
@@ -416,7 +416,7 @@
       <div class="separator separator-personalities-contact"></div>
       <h2 class="section__h2 section__h2--placeholder"></h2>
       <div class="contact" id="contact">
-        <div class="contact__header">
+        <div class="contact__header" id="contact__header" data-observe="loadContact">
           <h3>
             Contact <img class="contact__h3__logo" src="./images/hero-images/FULL-LOGO-CLIPPED-2022-06-12.svg" alt="C-WEBS LOGO, return to top"> Today!
           </h3>
@@ -451,7 +451,7 @@
             <label for="contact__message-field" class="contact__message__label">Message</label>
           </div>
 
-          <button class="contact__submit-button" id="contact__submit-button" type="submit" form="contact__form">
+          <button class="contact__submit-button" data-observe="loadContact" id="contact__submit-button" type="submit" form="contact__form">
             <img class="contact__button__rocket" src="./images/hero-images/menu-button-rocket.svg" alt="button shaped like a rocket">
             <span>Submit</span>
           </button>

@@ -229,7 +229,13 @@
   align-items: center;
   margin-top: 1.4em;
   height: min-content;
-  transform: rotateY(180deg);
+  transform: translateX(-250%) rotateY(180deg);
+  transition: transform 1000ms;
+}
+
+/* loading helper */
+.contact__submit-button.loading-anim{
+  transform: translateX(0) rotateY(180deg);
 }
 
 .contact__button__rocket{
@@ -405,6 +411,7 @@ footer p:nth-child(2) a{
 
  .contact-footer{
     padding-top: calc(var(--sect-inline-marg) * 0.4);
+    overflow-x: hidden;
   }
 
   .contact{
@@ -417,7 +424,36 @@ footer p:nth-child(2) a{
     grid-area: right;
     align-self: center;
     justify-self: end;
+    /* opacity: 0; */
     transform: translateY(-22%);
+  }
+
+  /* pre-loaded values */
+  .contact__header h3,
+  .contact__header p{
+    opacity: 0;
+    transform: translateX(8em);
+    transition: opacity 1000ms, transform 1000ms;
+  }
+
+  .contact__header.loading-anim h3,
+  .contact__header.loading-anim p{
+    opacity: 1;
+    transform: translateX(0);
+    transition: opacity 1000ms, transform 1000ms;
+  }
+
+  loading helper class */
+  .contact__header.loading-anim > h3{
+      transition-delay: 0ms;
+  }
+   
+  .contact__header.loading-anim > p:first-of-type{
+    transition-delay: 300ms;
+  }
+  
+  .contact__header.loading-anim > p:last-of-type{
+    transition-delay: 500ms;
   }
   
   .contact__h3__logo{

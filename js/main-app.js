@@ -112,12 +112,12 @@
 
   window.addEventListener('DOMContentLoaded', event => {
     gsap.timeline({delay: 0.5})
-      .to('#nav__logo', {opacity: 1.2, duration: 1.2, ease: Power0.easeNone})
+      .to('#nav__logo', {opacity: 1, duration: 1.2, ease: Power0.easeNone})
       .to([openButton, closeButton.nextElementSibling], {x: 0, duration: 1}, '<75%') // nav__ul
       .to(heroH1.nextElementSibling, {x: 0, duration: 1}, '<50%') // hero button
       .to(heroBanner.parentElement, {y: 0, duration: 3.25}, '<25%')
       .to(heroH1, {opacity: 1, duration: 3, ease: Power0.easeNone}, '<35%')
-      .add(heroLampTimeline, '+=0.5')
+      .add(heroLampTimeline, '-=0.5') //
   });
 
 
@@ -234,7 +234,7 @@
 
   // SECTION REVEAL ANIMS
 
-
+  // hero, projects, personalities
   const createRevealer = element => {
     ScrollTrigger.create({
       trigger: element,
@@ -245,6 +245,18 @@
   };
   // every poster-header, portrait, & tard gets a loading trigger
   document.querySelectorAll('[data-observe="load"]').forEach(element => createRevealer(element));
+
+  // contact header, form submit
+  const createContactRevealer = element => {
+    ScrollTrigger.create({
+      trigger: element,
+      start: 'top bottom-=24%',
+      toggleClass: 'loading-anim',
+      once: true,
+      // markers: true,
+    });
+  };
+  document.querySelectorAll('[data-observe="loadContact"]').forEach(element => createContactRevealer(element));
 
 
   // PROJECTS-POSTER-3 show/hide 'Water' anim
@@ -274,6 +286,8 @@
     .fromTo(['#personalities__reg-clare__all', '#personalities__barritone__all'],
       {scaleX: 1, scaleY: 1}, {scaleX: 0.95, scaleY: 1.05}, 0);
     
+  // HERO FLAME PLAY/PAUSE
+
   ScrollTrigger.create({
     trigger: sections[2],
     start: 'top+=10% bottom',
