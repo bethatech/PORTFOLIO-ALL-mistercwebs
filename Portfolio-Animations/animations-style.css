@@ -41,7 +41,7 @@ body{
 
 main{
   background-color: var(--clr-black);
-  background-image: url(./animations-images/TILED-LOGO-BG-VERT-2022-06-18.svg);
+  background-image: url(./animations-images/bg-tiled-logo-vert-2022-06-18.svg);
   background-size: 25vmax;
   height: 100vh; 
   font-family: 'Handlee', sans-serif;
@@ -276,7 +276,7 @@ section{
 
 .coins__coin::after{
   content: '';
-  background-image: url(./animations-images/ROUND-LOGO-2022-06-18-BLACK.svg);
+  background-image: url(./animations-images/bg-round-logo-black-2022-06-18.svg);
   background-color: hsla(0, 0%, 0%, 0.5);
   position: absolute;
   inset: 0.015em;

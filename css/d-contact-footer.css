@@ -45,7 +45,7 @@
 }
 
 .contact-footer{
-  background-image: url(../images/contact-images/contact-bg-800x450.svg), var(--bg-img-texture);
+  background-image: url(../images/contact-images/bg-contact-800x450.svg), var(--bg-img-texture);
   background-size: cover, calc(20px + 0.25vmax);
   background-blend-mode: color-dodge;
   position: relative;

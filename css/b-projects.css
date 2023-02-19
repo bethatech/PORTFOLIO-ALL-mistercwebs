@@ -26,8 +26,8 @@
   --fz-projects: 3.8vh; /* sets many heights in .projects */
   --skew-4-deg: 4deg; /* used by poster-headers, roof/facia & ceiling/panels */
 
-  --mob-tab-bg-img: url(../images/projects-images/ProjectsDarkBG.webp);
-  --bg-img-texture: url(../images/projects-images/Rain.png);
+  --mob-tab-bg-img: url(../images/projects-images/bg-projects-dark.webp);
+  --bg-img-texture: url(../images/projects-images/bg-rain.png);
 }
 
 

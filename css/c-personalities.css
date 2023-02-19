@@ -27,7 +27,7 @@
 .personalities{
   --personalities-marg-bottom: 2vmax;
   background-color: #000;
-  /* CODED IN HEADER OF INDEX.HTML --> background-image: url(../images/personalities-images/TARD-PALACE-MIRROR.svg); */
+  /* CODED IN HEADER OF INDEX.HTML --> background-image: url(../images/personalities-images/bg-tard-palace-mirrored.svg); */
   background-position: top 5% left 35%;
   background-size: cover;
   position: relative;
