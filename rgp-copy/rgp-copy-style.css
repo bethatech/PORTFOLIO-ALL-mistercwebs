@@ -1,0 +1,115 @@
+:root{
+  /* --colorange: linear-gradient(178deg, hsl(18, 99%, 65%), hsl(18 99% 48%)); */
+}
+
+html {
+  /* scroll-behavior: smooth; */
+  font-size: calc(1rem + 0.5vw);
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: 'Poppins', sans-serif;
+  color: #000;
+}
+
+section{
+  background-image: linear-gradient(hsl(215 100% 85%), hsl(0 0% 100%) 40%);
+  position: relative;
+  min-height: 100vh;
+  max-height: 100vh;
+  overflow: hidden;
+}
+
+h1,
+p,
+ul{
+  width: 90%;
+  margin-inline: auto;
+}
+
+
+
+.section-header{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 90%;
+  margin: 1em;
+}
+
+.logo{
+  height: 1em;
+  margin-top: 0.4em;
+}
+
+h1{
+  margin-bottom: 0.5em;
+  font-size:  calc(2em + 0.75vw);
+  font-weight: 500;
+  line-height: 1.1;
+}
+
+.subheading{
+  margin-bottom: 0.875em;
+  font-size: 1em;
+  font-weight: 500;
+}
+
+.lawncare ul{
+  padding-left: 1.5em;
+}
+
+li{
+  margin-bottom: 0.05em;
+  font-size: 0.9em;
+  color: #555;
+}
+
+li:last-child{
+  /* margin-bottom: 1em; */
+}
+
+.sub-subheading{
+  /* font-size: 1.2em;
+  margin-bottom: 0.75em; */
+}
+
+.mower{
+  position: absolute;
+  bottom: -8vh;
+  left: 23%;
+  width: auto;
+  height: 69vh;
+}
+
+.grass{
+  background-image: url(./grass.webp);
+  background-position:  bottom;
+  background-repeat: repeat-x;
+  background-size: contain;
+  position: absolute;
+  bottom: 0;
+  left: 0%;
+  width: 100vw;
+  height: 10vh;
+  z-index: 10;
+}
+
+
+#rgp__link{
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+/*W************ NOTICE: MAX-WIDTH ************************/
+@media screen and (max-width: 391px) {
+  .mower{
+    opacity: 0.3;
+  }
+}
