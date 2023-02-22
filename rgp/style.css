@@ -1,0 +1,261 @@
+:root{
+  --colorange: linear-gradient(178deg, hsl(18, 99%, 65%), hsl(18 99% 48%));
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: calc(1rem + 0.5vw);
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: 'Poppins', sans-serif;
+  color: #000;
+}
+
+section{
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+h1,
+p,
+ul{
+  width: 90%;
+  margin-inline: auto;
+}
+
+.section-header{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 90%;
+  margin: 2em auto 1.5em;
+}
+
+.logo{
+  height: 2em;
+  margin-top: 0.4em;
+}
+
+.section-header > a{
+  justify-self: end;
+  background-image: var(--colorange);
+  padding: 0.5em 1em;
+  margin-bottom: 0.2em;
+  width: max-content;
+  border-radius: 500px;
+  font-size: 0.9em;
+  font-family: inherit;
+  font-weight: 600;
+  color: inherit;
+  text-decoration: none;
+  transition: 250ms;
+}
+
+.section-header > a img{
+  width: 0.75em;
+}
+
+.section-header > a:hover{
+  transform: scale(1.05, 1.05);
+  opacity: 0.95;
+}
+
+.compact-backhoe{
+  text-align: right;
+}
+
+.compact-backhoe a > img{
+  transform: rotateX(180deg);
+}
+
+h1{
+  font-size:  calc(2em + 0.75vw);
+  font-weight: 500;
+  line-height: 1.1;
+}
+
+.subheading{
+  margin-bottom: 0.875em;
+  font-size: 1em;
+  font-weight: 500;
+}
+
+.lawncare ul{
+  padding-left: 1.5em;
+}
+
+.compact-backhoe ul{
+  padding-right: 0.9em;
+  list-style: none;
+  line-height: 1.3;
+}
+
+li{
+  margin-bottom: 0.05em;
+  font-size: 0.9em;
+  color: #555;
+}
+
+li:last-child{
+  margin-bottom: 1em;
+}
+
+.bullet{
+  display: inline-block;
+  font-size: 1.3em;
+  transform: translateY(0.11em);
+}
+
+.sub-subheading{
+  font-size: 1.2em;
+  margin-bottom: 0.75em;
+}
+
+.call-today{
+  font-size: 1em;
+}
+
+.span-bold{
+  font-size: 1.1em;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+}
+
+.phone > a{
+  background: none;
+  margin: 0 0 1em 0;
+  font-size: 1.7em;
+  font-weight: 400;
+  color: #000;
+}
+
+.mower{
+  position: absolute;
+  bottom: -6vh;
+  left: 23%;
+  width: auto;
+  height: 69vh;
+  z-index: -1;
+}
+
+.grass{
+  background-image: url(./images/Grass.webp);
+  background-position:  bottom;
+  background-repeat: repeat-x;
+  background-size: contain;
+  position: absolute;
+  bottom: 0;
+  left: 0%;
+  width: 100vw;
+  height: 15vh;
+  z-index: 10;
+}
+
+.dirt{
+  position: absolute;
+  bottom: -5%;
+  left: 55%;
+  width: auto;
+  height: 43vh;
+  z-index: -1;
+}
+
+.backhoe{
+  position: absolute;
+  bottom: 0;
+  right: 35%;
+  width: auto;
+  height: 135vh;
+  transform: rotateY(180deg);
+  z-index: -1;
+}
+
+/* NOTICE: MAX-WIDTH */
+@media screen and (max-width: 380px) {
+  .mower,
+  .backhoe,
+  .dirt{
+    opacity: 0.5;
+  }
+}
+
+
+/* MIN-WIDTH 576px */
+
+@media screen and (min-width: 576px){
+  .section-header,
+  h1,
+  p,
+  ul{
+    width: 80%;
+  }
+}
+
+
+/* MIN-WIDTH 576px AND LANDSCAPE*/
+
+
+@media screen and (min-width: 512px) and (orientation: landscape){
+  .mower{
+    height: 130vh;
+    bottom: -18vh;
+    left: 60%;
+  }
+
+  .dirt{
+    bottom: -2vh;
+    left: 10%;
+  }
+
+  .backhoe{
+    transform: rotateY(0deg);
+    right: 76%;
+    bottom: -40vh;
+    height: 155vh;
+  }
+}
+
+/* MIN-WIDTH 576px */
+
+
+@media screen and (min-width: 928px) {
+  .section-header{
+    margin-bottom: 4em;
+  }
+  
+  .lawncare a,  
+  .compact-backhoe .logo{
+    justify-self: center;
+  }
+  
+}
+
+
+/* MIN-WIDTH 1920px */
+
+
+@media screen and (min-width: 1920px){
+  html{
+    font-size: calc(1rem + 0.75vw);
+  }
+  .section-header{
+    margin-bottom: 2em;
+  }
+}
+
+
+/* MIN-WIDTH 2400px */
+
+
+@media screen and (min-width: 2400px){
+  html{
+    font-size: calc(1rem + 1.5vw);
+  }
+}

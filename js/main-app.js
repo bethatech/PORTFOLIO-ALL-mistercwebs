@@ -2,23 +2,22 @@
 (() => {
 
   // CONTENTS
-    // mobile nav 23
-    // hero lamp anims 83
-    // hero loading 108
-    // hero banner 124
-    // section indicators 153
-    // hero button clicked 200
-    // floor/banner scroll anim 216
-    // section reveal anims 234
-    // projects__poster-3 show/hide 249
-    // dancing tards 260
-    // contact form 290
+    // mobile nav 22
+    // hero lamp anims/play/pause 82
+    // hero loading 107
+    // hero banner 123
+    // section indicators 152
+    // hero button clicked 199
+    // floor/banner scroll anim 215
+    // section reveal anims 233
+    // projects__poster-3 show/hide 250
+    // dancing tards play/pause 261
+    // contact form 391
     // contact submit 336
     // contact thank you button 370
 
   'use strict';
   gsap.registerPlugin(ScrollTrigger);
-  // gsap.registerPlugin(ScrollTo);
 
   // MOBILE NAV
 
@@ -80,7 +79,7 @@
   navMenu.addEventListener('click', closeNavMenu);
 
   
-  // HERO__LAMP ANIMS (used by hero loading anim)
+  // HERO LAMPS ANIMS/PLAY/PAYSE
 
 
   const heroLampTimeline = gsap.timeline({
@@ -105,13 +104,13 @@
   });
 
 
-  // HERO SECTION LOADING ANIMS ---------------------------------------------------------------
+  // HERO LOADING ANIMS
 
 
   const heroH1 = document.getElementById('hero__h1');
 
   window.addEventListener('DOMContentLoaded', event => {
-    gsap.timeline({delay: 0.5})
+    gsap.timeline({delay: 0.25})
       .to('#nav__logo', {opacity: 1, duration: 1.2, ease: Power0.easeNone})
       .to([openButton, closeButton.nextElementSibling], {x: 0, duration: 1}, '<75%') // nav__ul
       .to(heroH1.nextElementSibling, {x: 0, duration: 1}, '<50%') // hero button
@@ -150,7 +149,7 @@
   });
 
       
-  // SECTION INDICATORS --> h2, nav li
+  // SECTION INDICATORS; h2, nav li
 
 
   const sectionH2s = Array.from(document.getElementsByClassName('section__h2')),
@@ -222,7 +221,6 @@
       start: () => {return `center bottom-=${sections[0].clientHeight * 0.51}`},
       end: 'bottom top',
       scrub: 0.1
-      // markers: true
     }
   })
     .set(heroBanner.parentElement.nextElementSibling, {'perspective-origin': '50% 1%'}) // hero__walk
@@ -231,32 +229,22 @@
     .to(heroBanner.parentElement, {y: (heroBanner.parentElement.nextElementSibling.clientHeight * 2.1)}, '<')
     .to(['.hero__lamprow-2', '.hero__lamprow-3'], {bottom: '-22vh'}, '<');
 
+  
+// SECTION REVEAL ANIMS
 
-  // SECTION REVEAL ANIMS
 
-  // hero, projects, personalities
+  const contactForm = document.getElementById('contact__form'); // also used by contact form ~line 300
   const createRevealer = element => {
     ScrollTrigger.create({
       trigger: element,
-      start: 'top bottom-=40%',
+      start: 'top bottom-=30%',
       toggleClass: 'loading-anim',
+      onEnter: () => {if(element.classList.contains('contact__header')) contactForm.lastElementChild.classList.add('loading-anim');},
       once: true,
     });
   };
-  // every poster-header, portrait, & tard gets a loading trigger
+  // every poster-header, portrait, tard and .contact__header gets a loading trigger
   document.querySelectorAll('[data-observe="load"]').forEach(element => createRevealer(element));
-
-  // contact header, form submit
-  const createContactRevealer = element => {
-    ScrollTrigger.create({
-      trigger: element,
-      start: 'top bottom-=24%',
-      toggleClass: 'loading-anim',
-      once: true,
-      // markers: true,
-    });
-  };
-  document.querySelectorAll('[data-observe="loadContact"]').forEach(element => createContactRevealer(element));
 
 
   // PROJECTS-POSTER-3 show/hide 'Water' anim
@@ -276,7 +264,7 @@
   const tardTimeLine = gsap.timeline({defaults: {duration: 0.5, repeat: -1}}),
         flames = Array.from(document.getElementsByClassName('personalities__hoverer__flame'));
 
-  tardTimeLine.paused(true) // if !set here? plays on page load or not at all
+  tardTimeLine.paused(true) // if !set here, plays on page load or not at all
     .fromTo('#personalities__horn-player__head', 
       {rotate: 13, x: '0.05em'}, {rotate: 0, x: 0})
     .fromTo('#personalities__horn-player__middle', 
@@ -285,8 +273,6 @@
       {rotate: -4}, {rotate: 0}, 0)
     .fromTo(['#personalities__reg-clare__all', '#personalities__barritone__all'],
       {scaleX: 1, scaleY: 1}, {scaleX: 0.95, scaleY: 1.05}, 0);
-    
-  // HERO FLAME PLAY/PAUSE
 
   ScrollTrigger.create({
     trigger: sections[2],
@@ -305,8 +291,7 @@
   //  CONTACT FORM
   
   
-  const contactForm = document.getElementById('contact__form'),
-        contactInputs = Array.from(document.getElementsByClassName('contact__input-field')),
+  const contactInputs = Array.from(document.getElementsByClassName('contact__input-field')),
         contactErrors = contactForm.firstElementChild,
         thankYouForm = contactForm.nextElementSibling,
         contactModal = contactForm.parentElement.parentElement.firstElementChild;
@@ -373,7 +358,7 @@
           handleInputErrors(invalidEmailAlert);
           return;
         };
-        // next 4 lines skipped unless all inputs valid
+        // next 4 lines skipped unless all inputs valid, hopefully
         contactInputs[index].classList.remove('invalid');
       }; // end for()
     document.body.classList.add('modal--open');

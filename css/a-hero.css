@@ -2,16 +2,16 @@
 /* CONTENTS
   global styles 54
   section indicators 98
-  modal, header & nav 119
-  nav buttons 159
-  nav menu & ul 214
-  hero section 279
-  hero button 301
-  hero Scene container & banner 361
-  floor 427
-  @media 672px 455
-  @media 1024px 519
-  @media 1600px 538
+  modal, header & nav 120
+  nav buttons 160
+  nav menu & ul 215
+  hero 280
+  hero button 303
+  hero Scene container & banner 363
+  floor 429
+  @media 672px 457
+  @media 1024px 521
+  @media 1600px 540
 */
 
 /* NOTE: there are custom properties in :root of most .css files in PORTFOLIO-ALL */
@@ -96,6 +96,7 @@ button *{
 
 
 /* STICKY SECTION INDICATORS */
+
 
 .section__h2{
   position: sticky;
@@ -298,6 +299,7 @@ nav{
   opacity: 0
 }
 
+
 /* HERO BUTTON */
 
 
@@ -368,7 +370,7 @@ nav{
   left: 0;
 }
 
-/* banner */
+/* BANNER */
 
 .hero__banner-container{ /* only exists for the 10 degree tilt */
   position: absolute;

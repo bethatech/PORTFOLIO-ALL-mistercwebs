@@ -151,7 +151,7 @@ section{
 
 #water__clip-path__path{
   /* dunno why this had to be set here, but it wouldn't work any other way
-  It is the exact path from Mask1.svg. @keyframes make-waves = Mask2.svg */
+  It is the exact path from Mask1.svg. @keyframes make-waves = Mask2.svg << Not Necessarily True*/
   d: path("M0.846924 207.5V-6.10352e-05M0.846924 207.5V399.5H813.847V207.5C674.949 224.373 546.245 224.373 407.347 207.5C268.449 190.627 139.745 190.627 0.846924 207.5ZM813.847 207.507V-6.10352e-05");
   animation: make-waves 3s ease-in-out infinite alternate;
 }

@@ -1,15 +1,16 @@
 
 /* CONTENTS
-  contact-footer 39
-  form 92
-  errors 102
-  errors position helpers 134
-  inputs 154
-  input hovers / focus / validation helpers 82
-  submit button / after/ hover 220
-  thank you w/anim 266
-  FOOTER 356
-  MIN WIDH 1024px 394  
+  separator 30
+  contact-footer 40
+  form 94
+  errors 105
+  errors position / helpers 138
+  inputs 159
+  input hovers / focus / validation helpers 192
+  submit button / after/ hover 231
+  thank you w/anim 278
+  FOOTER 370
+  MIN WIDH 1024px 408  
 */
 
 :root{
@@ -17,7 +18,6 @@
   --contact-footer-width: max(28rem, 41vw);
   --ls-orbitron: 0.02em;
   --bord-rad: 0.2em;
-  /* --clr-valid: hsl(60, 100%, 25%); */
   --clr-valid: hsl(84, 65%, 30%);
   --clr-focus: var(--clr-gold);
   --clr-invalid: var(--clr-crim);
@@ -26,17 +26,18 @@
   --clr-input-text: var(--clr-gold);
 }
 
+
 .separator-personalities-contact{
   background-image: linear-gradient(transparent, hsl(0 0% 0%), transparent);
   position: absolute;
   top: calc(var(--section-separator-ht) * -0.4);
-  width: 99%;
+  width: 100%;
   height: calc(var(--section-separator-ht));
   z-index: 5;
 }
 
 
-/* contact-footer */
+/* CONTACT-FOOTER */
 
 .contact-footer *,
 .contact-footer *::before,
@@ -50,7 +51,7 @@
   background-blend-mode: color-dodge;
   position: relative;
   padding-top: var(--sect-inline-marg);
-  min-height: 100vh;
+  min-height: 100vh
 }
 
 .contact__modal{
@@ -70,7 +71,8 @@
 }
 
 .contact{
-  margin: 0 var(--sect-inline-marg);
+  padding: 0 var(--sect-inline-marg);
+  overflow: hidden;
 }
 
 .contact__header h3{
@@ -91,6 +93,7 @@
 
 /* FORM */
 
+
 .contact__form{
   --input-left-spacing: 0.6em;
   position: relative;
@@ -100,6 +103,7 @@
 
 
 /* CONTACT ERRORS */
+
 
 #contact__errors{
   position: absolute;
@@ -133,6 +137,7 @@
 
 /* ERRORS HELPERS */
 
+
 #contact__errors.err-msg-position-name{
   opacity: 1;
   transition: opacity 300ms;
@@ -152,6 +157,7 @@
 
 
 /* INPUTS */
+
 
 .contact__input input,
 .contact__input textarea{
@@ -184,6 +190,7 @@
 
 
 /* INPUT hovers / focus / validation helpers */
+
 
 .contact__input-field::placeholder{
   color: transparent;
@@ -223,19 +230,14 @@
 
 /* SUBMIT BUTTON */
 
+
 .contact__submit-button{
   background-color: transparent;
   display: flex;
   align-items: center;
   margin-top: 1.4em;
   height: min-content;
-  transform: translateX(-250%) rotateY(180deg);
-  transition: transform 1000ms;
-}
-
-/* loading helper */
-.contact__submit-button.loading-anim{
-  transform: translateX(0) rotateY(180deg);
+  transform: rotateY(180deg);
 }
 
 .contact__button__rocket{
@@ -275,6 +277,7 @@
 
 /* THANK YOU */
 
+
 .contact__thank-you{
   background-image: linear-gradient(hsl(211, 61%, 58%), hsl(234, 30%, 75%), hsl(8, 61%, 83%), hsl(10, 94%, 68%));
   position: absolute;
@@ -303,6 +306,7 @@
 
 
 /* THANK YOU loading anim */
+
 
 @keyframes showThankYou {
   from{
@@ -411,12 +415,11 @@ footer p:nth-child(2) a{
 
  .contact-footer{
     padding-top: calc(var(--sect-inline-marg) * 0.4);
-    overflow-x: hidden;
   }
 
   .contact{
     display: grid;
-    grid-template-columns: 47% 53%;
+    grid-template-columns: 47% auto;
     grid-template-areas: "left right";
   }
 
@@ -424,16 +427,20 @@ footer p:nth-child(2) a{
     grid-area: right;
     align-self: center;
     justify-self: end;
-    /* opacity: 0; */
     transform: translateY(-22%);
   }
 
-  /* pre-loaded values */
+  /* pre loading-anim values, button too */
   .contact__header h3,
   .contact__header p{
     opacity: 0;
     transform: translateX(8em);
     transition: opacity 1000ms, transform 1000ms;
+  }
+
+  .contact__submit-button{
+    transform: translateX(-250%) rotateY(180deg);
+    transition: transform 1500ms 700ms;
   }
 
   .contact__header.loading-anim h3,
@@ -443,7 +450,7 @@ footer p:nth-child(2) a{
     transition: opacity 1000ms, transform 1000ms;
   }
 
-  loading helper class */
+  /* loading helpers */
   .contact__header.loading-anim > h3{
       transition-delay: 0ms;
   }
@@ -454,6 +461,10 @@ footer p:nth-child(2) a{
   
   .contact__header.loading-anim > p:last-of-type{
     transition-delay: 500ms;
+  }
+
+  .contact__submit-button.loading-anim{
+    transform: translateX(0) rotateY(180deg);
   }
   
   .contact__h3__logo{

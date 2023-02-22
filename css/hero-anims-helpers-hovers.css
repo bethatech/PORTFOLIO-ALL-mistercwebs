@@ -1,13 +1,14 @@
 /* CONTENTS
     mobile nav menu container helper classes 12
-    nav__menu helpers 33
-    nav__li helpers 49
-    nav__li helper/hovers 672px 73
-    nav__li anims 672px 126
-    NAV BUTTONS 145
-    HERO BUTTON 213
-    HERO BANNER 275 
+    nav__menu helpers 37
+    nav__li helpers 51
+    nav__li helper/hovers tablet/desk 76
+    nav__li anims tablet/desk 129
+    MOBILE NAV BUTTONS 148
+    HERO BUTTON 217
+    HERO BANNER 273 
 */
+
 
 html.auto{
   scroll-behavior: auto;
@@ -32,6 +33,7 @@ body.modal--open{
 
 /* NAV MENU SECTION */
 
+
 /*  MOBILE nav__menu helper classes */
 .nav__header.overflow-visible{
   overflow: visible;
@@ -47,6 +49,7 @@ body.modal--open{
 
 
 /* MOBILE nav__li helper classes */
+
 
 .nav__li.display-current-page{
   pointer-events: none;
@@ -143,6 +146,7 @@ body.modal--open{
 
 
 /* NAV BUTTONS */
+
 
 /* MOBILE nav button helpers */
 /* used by nav buttons, pretty generic */
@@ -252,7 +256,7 @@ body.modal--open{
 }
 
 
-/* CLICKED */
+/* HERO BUTTON CLICKED */
 
 
 .hero__button.clicked{
@@ -262,12 +266,6 @@ body.modal--open{
 }
 
 @keyframes heroButtonClicked{
-  /* from{
-    transform: translate(0, 0) rotate3d(0, 0, 0, 0deg) scale(1, 1);  
-  }
-  to{
-    transform: translate(80vw, -5em) rotate3d(-0.05, 1, 0, 80deg) scale(0, 0); 
-  }  */
   to{transform: translateX(100vw)}
 }
 
@@ -280,7 +278,6 @@ body.modal--open{
 }
 
 @keyframes heroBannerRotate {
-  /* translateY(0.35em)  */
   0%, 10%{transform: rotateY(-18deg) translateY(0.35em);} 
   21%, 35%{transform: rotateY(-110deg) translateY(0.35em);}
   46%, 60%{transform: rotateY(-202.5deg) translateY(0.35em);}

@@ -1,8 +1,8 @@
 /* CONTENTS
-    tard stuff 8
-    hoverer flames anims 73
-    portrait helper classes  87
-    portrait loading anims 157
+    tards 8
+    hoverer flames 75
+    portraits helpers  91
+    portrait loading anims 162
 */
 
 .tard--drop-shadow{
@@ -15,6 +15,7 @@
 
 
 /* TARD HELPERS */
+
 
 .personalities__tard-1.loading-anim,
 .personalities__tard-3.loading-anim{
@@ -40,6 +41,7 @@
 
 
 /* TARD LOADING ANIMS. Dancing anims in main-app.js */
+
 
 @keyframes fromLeft {
   0%{
@@ -71,6 +73,8 @@
 
 
 /* HOVERER FLAMES */
+
+
 .personalities__hoverer__flame.running{
   animation-play-state: running;
 }
@@ -84,7 +88,8 @@
 }
 
 
-/* PORTRAIT HELPERS */
+/* PORTRAITS HELPERS */
+
 
 .personalities__portrait-1.loading-anim,
 .personalities__portrait-3.loading-anim{

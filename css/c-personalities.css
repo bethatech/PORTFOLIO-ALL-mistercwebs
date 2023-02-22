@@ -1,17 +1,17 @@
 /* CONTENT
-    mobile styles
-      tards 44
-      finicky tard assembly stuff 77
-      staff 167
-      scrolls 213
-    query 576px root/grid-container/tards 253
-                staff 303
-    query 832px root/grid-container/tards 331
-                staff 376
-    query 1260px root/grid-container/tards 390
-                staff 452
-    query 1600px 481
-    query 3000px 499
+    personalities 28
+    mobile / tards 42
+    finicky tard assembly stuff 76
+    staff 168
+    scrolls 215
+    query 576px root/grid-container/tards 256
+                staff 306
+    query 832px root/grid-container/tards 335
+                staff 380
+    query 1260px root/grid-container/tards 395
+                staff 457
+    query 1600px 487
+    query 3000px 505
 */
 
 :root{
@@ -39,9 +39,8 @@
 }
 
 
-/* MOBILE STYLES */
+/* MOBILE / TARDS */
 
-/* TARDS */
 
 /* all vertical alignment controlled by staff in mobile/tablet view EXCEPT tard-5
   --AND-- watch tard-3 bottom 3 col view */
@@ -50,7 +49,7 @@
   --special-tard-d-shadow: drop-shadow(0.03em 0px hsl(9 80% 75%));  /* --KEEP EVERYTHING IN EM UNITS-- */
   position: relative;
   padding: 6em 3.5em 0;
-  width: max-content;  /* keeps 'em 7em (padding above) wide */
+  width: max-content;  /* keeps 'em 6em (padding above) wide */
   font-size: var(--fz-tard);
   opacity: 0;
 }  
@@ -75,6 +74,7 @@
 
 
 /* finicky tard & hoverer assembly stuff */
+
 
 .personalities__tard:not(.personalities__tard-5) > img:first-of-type{
   bottom: 1.5em;
@@ -148,6 +148,7 @@
 
 /* HOVERERS */
 
+
 .personalities__hoverer{
   bottom: 0.15em;
   left: 1.8em;
@@ -165,6 +166,7 @@
 
 
 /* STAFF / FRAMES mobile view */
+
 
 .personalities__staff{
   position: relative;
@@ -210,7 +212,8 @@
 }
 
 
-/* SCROLLS mobile view */
+/* SCROLLS mobile */
+
 
 .personalities__scroll{
   position: absolute;
@@ -286,7 +289,7 @@
 
   .personalities__tard-3{
     grid-area: tard-3;
-    bottom: 1.5em;  /* KLUGE: prob wanna remove later */
+    bottom: 1.5em;  /* KLUGE: changes @ 832px */
   }
 
   .personalities__tard-4{
@@ -301,6 +304,7 @@
 
 
   /* STAFF 576px 3 COLS */
+
 
   .personalities__staff{
     margin-bottom: 0;
@@ -365,7 +369,7 @@
   }
 
   .personalities__tard-3{
-    bottom: 0; /*  Nice Reset from ~80 lines ^^up^^ */
+    bottom: 0; /*  Reset from mobile */
   }
 
   .personalities__tard-5{
@@ -374,6 +378,7 @@
 
 
   /*  STAFF 832px  2 COLS*/
+
 
   .personalities__staff-1,
   .personalities__staff-2{
@@ -450,6 +455,7 @@
 
 
   /* STAFF 1260px */
+
 
   .personalities__staff{
     margin: 0;

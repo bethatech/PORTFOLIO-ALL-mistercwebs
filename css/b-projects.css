@@ -1,24 +1,24 @@
 
 /* CONTENTS
   projects section and separators 34
-  mobile styles 61
-    posters & page viewers 95
-    poster header loading anim 161
-  tablet styles - WIDTH 672px 180
-    posters 211
-    poster-4 229
-  desktop / structure - WIDTH 1200px 268
-    roof 293
-    ceiling 340
-    wall 384
-    posters 420
-    page viewer hover anims 446
-    bus 455
-    trash 480
-  scenery container / barrier 527 
-    ground & pad 586
-    sidewalk 630
-  MIN-WIDTH 2800px 685
+  mobile 61
+    posters & page viewers 96
+    poster header loading anim 163
+  tablet - 672px 183
+    posters 214
+    poster-4 234
+  desktop / structure - WIDTH 1200px 274
+    roof 302
+    ceiling 350
+    wall 395
+    posters 432
+    page viewer hover 459
+    bus 469
+    trash 495
+  scenery / barrier 543
+    ground & pad 602
+    walk 647
+  MIN-WIDTH 2800px 703
 */
 
 
@@ -31,7 +31,7 @@
 }
 
 
-/* separators */
+/* SEPARATORS */
 
 .separator{
   position: absolute;
@@ -58,7 +58,8 @@
 }
 
 
-/* PROJECTS / mobile styles */
+/* MOBILE */
+
 
 .projects{
   position: relative;
@@ -92,7 +93,8 @@
 }
 
 
-/* posters & page viewers */
+/* POSTERS/PAGE VIEWERS mobile  */
+
 
 .projects__poster{
   display: grid;
@@ -158,7 +160,8 @@ p.small{
 }
 
 
-/* poster header loading anim */
+/* POSTER HEADERS LOAD ANIMS */
+
 
 .projects__poster__header.loading-anim{
   animation: showPosterHeader 1100ms forwards 50ms;
@@ -177,7 +180,7 @@ p.small{
 }
 
 
-/* tablet styles / MIN-WIDTH: 672px */
+/* TABLET / 672px */
 @media screen and (min-width: 672px) {
 
 
@@ -208,8 +211,9 @@ p.small{
   }
 
 
-  /* posters tablet 672px */
+  /* POSTERS TABLET 672px */
   
+
   .projects__poster{
     margin-bottom: 3.7em;
     width: 33.5vw;
@@ -227,7 +231,8 @@ p.small{
   }
 
 
-  /* POSTER-4. Only exists in tablet view */
+  /* POSTER-4 only in tablet view */
+
 
   .projects__poster-4{
     display: grid;
@@ -266,7 +271,7 @@ p.small{
 }
 
 
-/* desktop styles / MIN-WIDTH: 1200px */
+/* DESKTOP / MIN-WIDTH: 1200px */
 @media screen and (min-width: 1200px){
 
 
@@ -294,7 +299,8 @@ p.small{
   }
 
 
-  /* roof */
+  /* ROOF */
+
   
   .projects__facia,
   .projects__ceiling{
@@ -341,7 +347,8 @@ p.small{
   }
   
 
-  /* ceiling */
+  /* CEILING */
+
 
   .projects__ceiling{
     display: flex;
@@ -385,7 +392,8 @@ p.small{
   }
   
   
-  /* wall */
+  /* WALL */
+
   
   .projects__wall{
     position: relative; /* affects z layering */
@@ -421,7 +429,8 @@ p.small{
   }
   
 
-  /* posters 1200px */
+  /* POSTERS 1200px */
+
   
   .projects__poster{
     margin: 0.2em auto 0;
@@ -447,7 +456,8 @@ p.small{
   }
 
 
-  /* page viewers hover animation */
+  /* PAGE VIEWER HOVER */
+
   
   .page-viewer:hover,
   .page-viewer:focus{
@@ -456,7 +466,8 @@ p.small{
   }
 
 
-  /* bus sign, dude & babe */
+  /* BUS */
+
   
   .projects__bus{
     position: absolute;
@@ -475,14 +486,14 @@ p.small{
   }
   
   .projects__bus-babe{
-    /* preserveAspectRatio="none" */
     right: 32.9vw;
     bottom: -0.6em;
     height: calc(var(--wall-post-height) * .55);
   }
 
   
-  /* trash can */
+  /* TRASH */
+
   
   .projects__trash{
     position: absolute;
@@ -546,12 +557,12 @@ p.small{
   }
   
 
-  /* barrier */
+  /* BARRIER */
+
 
   .projects__barrier{
     background-color: hsl(29 15% 22%);
     position: relative;
-    
   }
 
   .projects__barrier__face{
@@ -588,7 +599,8 @@ p.small{
   }
   
 
-  /* ground & pad */
+  /* GROUND / PAD */
+
   
   .projects__ground{
     background-color: hsl(78 20% 12%);
@@ -632,7 +644,8 @@ p.small{
   }
   
 
-  /* sidewalk */
+  /* WALK */
+
   
   .projects__sidewalk{
     background-color: hsl(29 10% 28%);
